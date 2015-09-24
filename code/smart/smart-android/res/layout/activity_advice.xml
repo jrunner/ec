@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000" >
+
+        <Button
+            android:id="@+id/activity_advice_bn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="意见反馈"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <EditText
+            android:id="@+id/activity_advice_et_advice"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="top"
+            android:hint="请填写您的宝贵意见,建议不能少于12个字符,不能多于120个字符"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/activity_advice_bn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="提交"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

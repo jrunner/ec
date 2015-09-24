@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000" >
+
+        <Button
+            android:id="@+id/activity_start_pk_bn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="挑战"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/activity_start_pk_iv_play"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/activity_start_pk_ll_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/activity_start_pk_ll_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/activity_start_pk_ly_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/activity_start_pk_tv_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="A选项" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_start_pk_ll_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/activity_start_pk_ly_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/activity_start_pk_tv_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="B选项" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_start_pk_ll_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/activity_start_pk_ly_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/activity_start_pk_tv_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="C选项" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_start_pk_ll_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/activity_start_pk_ly_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/activity_start_pk_tv_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="D选项" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_start_pk_ll_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/activity_start_pk_ly_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/activity_start_pk_tv_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="E选项" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/activity_start_pk_bn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="下一个"
+        android:textColor="#FF0000"
+        android:textSize="20sp" />
+
+</LinearLayout>

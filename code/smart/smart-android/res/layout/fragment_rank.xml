@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp" >
+
+        <EditText
+            android:id="@+id/fragment_rank_et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint="请输入昵称" />
+
+        <Button
+            android:id="@+id/fragment_rank_bn_search"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_style"
+            android:text="搜索"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fragment_rank_lv_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+</LinearLayout>

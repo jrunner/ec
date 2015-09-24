@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/activity_home_vp_ads"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/activity_home_ll_ads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CBCBCB"
+                android:orientation="vertical"
+                android:paddingBottom="0.2dp"
+                android:paddingTop="0.2dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/activity_home_bn_year"
+                        android:drawablePadding="4dp"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="年代"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_sixty"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="60" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_seventy"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="70" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_eighty"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="80" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_ninty"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="90" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CBCBCB"
+                android:orientation="vertical"
+                android:paddingBottom="0.2dp"
+                android:paddingTop="0.2dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/activity_home_bn_region"
+                        android:drawablePadding="4dp"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="地域"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_dl"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="大陆" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_gt"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="港台" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_rh"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="日韩" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_om"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="欧美" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CBCBCB"
+                android:orientation="vertical"
+                android:paddingBottom="0.2dp"
+                android:paddingTop="0.2dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/activity_home_bn_style"
+                        android:drawablePadding="4dp"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="风格"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_lx"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="流行" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_yg"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="摇滚" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_my"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="民谣" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_sc"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="说唱" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CBCBCB"
+                android:orientation="vertical"
+                android:paddingBottom="0.2dp"
+                android:paddingTop="0.2dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/activity_home_bn_emotion"
+                        android:drawablePadding="4dp"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="情感"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_xy"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="喜悦" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_sg"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="伤感" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_lz"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="励志" />
+
+                    <Button
+                        android:id="@+id/activity_home_bn_tf"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_style"
+                        android:text="颓废" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#CBCBCB"
+        android:paddingBottom="0.2dp"
+        android:paddingTop="0.2dp" >
+
+        <Button
+            android:id="@+id/activity_home_bn_play"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/row_selector"
+            android:gravity="center"
+            android:text="play"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

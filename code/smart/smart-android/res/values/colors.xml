@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 控件按下样式 -->
+    <drawable name="pressed_bg">#40AA53</drawable>
+    <drawable name="nopressed_bg">#FFFFFF</drawable>
+</resources>
