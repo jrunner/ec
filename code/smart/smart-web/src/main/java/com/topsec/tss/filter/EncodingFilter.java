@@ -1,4 +1,4 @@
-﻿package com.topsec.tss.filter;
+package com.topsec.tss.filter;
 
 import java.io.IOException;
 

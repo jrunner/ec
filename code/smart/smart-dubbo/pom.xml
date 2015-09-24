@@ -10,7 +10,7 @@
         <groupId>com.t2t.ec</groupId>
         <artifactId>smart-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../smart-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>

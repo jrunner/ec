@@ -1,4 +1,4 @@
-﻿package com.topsec.tss.util;
+package com.topsec.tss.util;
 
 import java.lang.reflect.Method;
 import java.text.ParseException;
@@ -16,7 +16,7 @@ import com.google.gson.reflect.TypeToken;
 
 /**
  * 自定义公用库
- * 
+ *
  * @author jrunner
  */
 public class Functions {
@@ -68,14 +68,14 @@ public class Functions {
 			if (!isSpace(length)) {
 				String dateType = "yyyy-MM-dd HH:mm:ss";
 				switch (Integer.valueOf(length)) {
-				case 4:
-					dateType = "yyyy";
-					break;
-				case 10:
-					dateType = "yyyy-MM-dd";
-					break;
-				default:
-					break;
+					case 4:
+						dateType = "yyyy";
+						break;
+					case 10:
+						dateType = "yyyy-MM-dd";
+						break;
+					default:
+						break;
 				}
 				return formatDateTime((Date) obj, dateType);
 			}
@@ -86,7 +86,7 @@ public class Functions {
 
 	/**
 	 * 判读map是否存在obj的键
-	 * 
+	 *
 	 * @param map
 	 * @param obj
 	 * @return boolean
@@ -97,7 +97,7 @@ public class Functions {
 
 	/**
 	 * 判读map是否存在obj的值
-	 * 
+	 *
 	 * @param map
 	 * @param obj
 	 * @return boolean
@@ -108,7 +108,7 @@ public class Functions {
 
 	/**
 	 * 判读来个字符串是否相等
-	 * 
+	 *
 	 * @param str1
 	 * @param str2
 	 * @return boolean
@@ -119,7 +119,7 @@ public class Functions {
 
 	/**
 	 * 截取字符串
-	 * 
+	 *
 	 * @param str
 	 *            要转换的字符串
 	 * @param length
@@ -137,7 +137,7 @@ public class Functions {
 
 	/**
 	 * 格式化日期 主要用于显示在文本框中
-	 * 
+	 *
 	 * @param date
 	 * @return String
 	 */
@@ -154,7 +154,7 @@ public class Functions {
 
 	/**
 	 * 获取当前时间
-	 * 
+	 *
 	 * @param format
 	 *            格式
 	 * @return String
@@ -173,34 +173,34 @@ public class Functions {
 		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
 		String week = null;
 		switch (dayOfWeek) {
-		case 1:
-			week = "星期日";
-			break;
-		case 2:
-			week = "星期一";
-			break;
-		case 3:
-			week = "星期二";
-			break;
-		case 4:
-			week = "星期三";
-			break;
-		case 5:
-			week = "星期四";
-			break;
-		case 6:
-			week = "星期五";
-			break;
-		case 7:
-			week = "星期六";
-			break;
+			case 1:
+				week = "星期日";
+				break;
+			case 2:
+				week = "星期一";
+				break;
+			case 3:
+				week = "星期二";
+				break;
+			case 4:
+				week = "星期三";
+				break;
+			case 5:
+				week = "星期四";
+				break;
+			case 6:
+				week = "星期五";
+				break;
+			case 7:
+				week = "星期六";
+				break;
 		}
 		return week;
 	}
 
 	/**
 	 * 是否是本月
-	 * 
+	 *
 	 * @param currentTime
 	 *            当前时间
 	 * @return boolean
@@ -274,7 +274,7 @@ public class Functions {
 
 	/**
 	 * 将null转换成字符串并去掉空格
-	 * 
+	 *
 	 * @param obj
 	 * @return String
 	 */
@@ -286,7 +286,7 @@ public class Functions {
 
 	/**
 	 * 是否为空
-	 * 
+	 *
 	 * @param obj
 	 *            (注：如果obj的只为null、""、-1、-1L、-1D、-1F返回值都为true)
 	 * @return boolean
@@ -318,7 +318,7 @@ public class Functions {
 
 	/**
 	 * 将json数据转换为Map
-	 * 
+	 *
 	 * @param json
 	 * @return
 	 */
@@ -337,7 +337,7 @@ public class Functions {
 
 	/**
 	 * 将null 与 空字符转换为0
-	 * 
+	 *
 	 * @param obj
 	 * @return
 	 */
@@ -349,7 +349,7 @@ public class Functions {
 
 	/**
 	 * 将null 与 空字符转换为0.0
-	 * 
+	 *
 	 * @param obj
 	 * @return
 	 */
@@ -367,7 +367,7 @@ public class Functions {
 
 	/**
 	 * 将null 与 空字符转换为0
-	 * 
+	 *
 	 * @param obj
 	 * @return
 	 */
@@ -395,7 +395,7 @@ public class Functions {
 		if(isSpace(ids)){
 			return "";
 		}
-		
+
 		String[] _ids = ids.split(",");
 
 		String id = "";
@@ -423,7 +423,7 @@ public class Functions {
 		}
 		ids = "'" + ids.replace(",", "','") + "'";
 		System.out.println(ids);
-		
+
 		System.err.println(Functions.convertStringToFloat("3.65"));
 		float a = 0.0f /0.0f;
 		System.err.println(0/1);

@@ -16,7 +16,6 @@
 			<div class="head_menu">
 				<ul class="nav">
 					<li>
-<%--						<a href="<%=request.getContextPath() %>/jsp/web/center.html" target="mainFrame" onfocus="this.blur()" class="nav_current" onclick="change_bg(this)"><img src="<%=request.getContextPath() %>/jsp/web/images/001.png" width="35" height="35" /><span style="display: inline-block;">首&nbsp;&nbsp;&nbsp;页</span></a>--%>
 						<a href="<%=request.getContextPath() %>/jsp/web/welcome.html" target="mainFrame" onfocus="this.blur()" class="nav_current" onclick="change_bg(this)"><img src="<%=request.getContextPath() %>/jsp/web/images/001.png" width="35" height="35" /><span style="display: inline-block;">首&nbsp;&nbsp;&nbsp;页</span></a>
 					</li>
 					<%
