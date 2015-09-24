@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/extTest.do" location="60,30" dimension="274,84" />
+  <StrutsActivity path="/jqueryTest.do" location="615,45" dimension="256,84" />
+  <StrutsActivity path="/base.do" location="50,1050" dimension="256,84" />
+  <StrutsActivity path="/dataImport.do" location="990,120" dimension="256,84" />
+  <StrutsActivity path="/ajax.do" location="945,15" dimension="220,84" />
+  <StrutsActivity path="/dic.do" location="780,285" dimension="214,84" />
+  <StrutsActivity path="/dpt.do" location="330,645" dimension="256,84" />
+  <StrutsActivity path="/emp.do" location="900,705" dimension="256,84" />
+  <StrutsActivity path="/emphis.do" location="950,850" dimension="286,84" />
+  <StrutsActivity path="/resume.do" location="360,930" dimension="232,84" />
+  <StrutsActivity path="/login.do" location="1250,450" dimension="286,84" />
+  <StrutsActivity path="success;6" location="45,300" dimension="208,72" />
+  <StrutsActivity path="error;6" location="330,330" dimension="196,72" />
+  <StrutsActivity path="/index.jsp" location="87,184" dimension="100,48" />
+  <StrutsActivity path="/jsp/web/portal/userlist.jsp" location="1250,1050" dimension="208,48" />
+  <StrutsActivity path="/jsp/web/portal/foot.jsp" location="650,850" dimension="184,48" />
+  <StrutsActivity path="/jsp/web/portal/head.jsp" location="950,1050" dimension="184,48" />
+  <StrutsActivity path="/jsp/web/dic/listOther.jsp" location="650,750" dimension="196,48" />
+  <StrutsActivity path="/jsp/web/dic/list.jsp" location="810,465" dimension="166,48" />
+  <StrutsActivity path="/jsp/web/dpt/list.jsp" location="350,550" dimension="166,48" />
+  <StrutsActivity path="/jsp/web/emp/update.jsp" location="1065,585" dimension="178,48" />
+  <StrutsActivity path="/jsp/web/emp/list.jsp" location="825,585" dimension="166,48" />
+  <StrutsActivity path="/jsp/web/his/update.jsp" location="50,650" dimension="178,48" />
+  <StrutsActivity path="/jsp/web/his/list.jsp" location="50,750" dimension="166,48" />
+  <StrutsActivity path="/jsp/web/resume/update.jsp" location="75,945" dimension="196,48" />
+  <StrutsActivity path="/jsp/web/resume/list.jsp" location="705,960" dimension="184,48" />
+  <StrutsActivity path="/jsp/web/common/success.jsp" location="50,550" dimension="202,48" />
+  <StrutsActivity path="/jsp/web/common/error.jsp" location="375,240" dimension="190,48" />
+  <StrutsActivity path="/jsp/web/foot.jsp" location="50,450" dimension="142,48" />
+  <StrutsActivity path="/jsp/web/head.jsp" location="1250,750" dimension="142,48" />
+  <StrutsActivity path="/jsp/web/dic/dic_polition.jsp" location="1095,315" dimension="214,48" />
+  <StrutsActivity path="/jsp/web/resume/view.jsp" />
+  <StrutsTransition id="/resume.do,update,/jsp/web/resume/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="360,969" />
+      <AbsolutePoint location="271,969" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emp.do,list,/jsp/web/emp/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="915,705" />
+      <AbsolutePoint location="915,633" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/base.do,head,/jsp/web/portal/head.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="306,1074" />
+      <AbsolutePoint location="950,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emphis.do,update,/jsp/web/his/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1093,892" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="error;6,null,/jsp/web/common/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="470,330" />
+      <AbsolutePoint location="470,288" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dpt.do,list,/jsp/web/dpt/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="433,645" />
+      <AbsolutePoint location="433,598" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/resume.do,view,/jsp/web/resume/view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="476,972" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emphis.do,list,/jsp/web/his/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1093,892" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emp.do,update,/jsp/web/emp/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1141,705" />
+      <AbsolutePoint location="1141,633" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/base.do,userlist,/jsp/web/portal/userlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="178,1092" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dic.do,listOther,/jsp/web/dic/listOther.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="795,369" />
+      <AbsolutePoint location="795,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="success;6,null,/jsp/web/common/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="151,372" />
+      <AbsolutePoint location="151,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/base.do,foot,/jsp/web/portal/foot.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="60,1050" />
+      <AbsolutePoint location="60,874" />
+      <AbsolutePoint location="650,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dic.do,list,/jsp/web/dic/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="893,369" />
+      <AbsolutePoint location="893,465" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/resume.do,list,/jsp/web/resume/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="592,984" />
+      <AbsolutePoint location="705,984" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/extTest.do,index,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="137,114" />
+      <AbsolutePoint location="137,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

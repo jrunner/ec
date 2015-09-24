@@ -1,0 +1,201 @@
+/* CSS Document */
+ @CHARSET "UTF-8";
+
+body,html,p,span,samp,div,ul,li {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px
+}
+
+a {
+	font-size: 12px;
+	color: #06482a;;
+	text-decoration: none;
+}
+
+a:link {
+	font-size: 12px;
+	color: #06482a;;
+	text-decoration: none;
+}
+
+a:hover {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+a:active {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+
+
+.table_content_page {
+	text-align: center;
+	background-color: #98cbde;
+	border: solid 1px #98cbde;
+	border-top: none;
+}
+
+.table_content_td {
+	background: #FFFFFF;
+	line-height: 26px;
+	padding-left:4px;
+}
+
+.table_content_td_left {
+	background: #FFFFFF;
+	line-height: 26px;
+	padding-left: 6px;
+	text-align: left;
+}
+
+.txt_input {
+	font-size: 12px;
+	border: 1px solid;
+	width: 160px;
+	border-color:#ddd;
+}
+
+.txt_select {
+	font-size: 12px;
+	border: 1px solid #ddd;
+	width: 160px;
+}
+
+.txt_input_date {
+	font-size: 12px;
+	border: 1px solid #ddd;
+	width: 160px;
+	background: #fff url(../images/datePicker.gif) no-repeat right;
+}
+
+.btn_input {
+	height: 21px;
+	width: 48px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+
+.paddingTop {
+	padding-top: 6px
+}
+
+.paddingLeft {
+	padding-left: 6px
+}
+
+
+.div_split {
+	height: 10px;
+}
+
+.title_oper {
+	font-size: 12px;
+	margin-right: 5px;
+	margin-left: 2px;
+	text-decoration: none;
+	color: #333;
+	padding-top: 2px;
+	text-align: right
+}
+
+.pl3 {
+	padding-left: 3px;
+}
+
+.pageStyle {
+	line-height: 26px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.pageStyle img {
+	margin-bottom: 2px;
+}
+
+/*小图标*/
+.ico_win {
+	background: url(../images/ico/win.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+	padding-bottom: 3px;
+	margin-left:2px;
+}
+.ico_del {
+	background: url(../images/ico/del.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+}
+.ico_new {
+	background: url(../images/ico/new.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+}
+.ico_edit {
+	background: url(../images/ico/edit.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+}
+.ico_imp {
+	background: url(../images/ico/imp.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+}
+.ico_exp {
+	background: url(../images/ico/exp.gif) no-repeat left;
+	line-height: 20px;
+	height: 16px;
+	padding-left: 20px;
+}
+
+
+
+.panel-body {
+	border-color:#ddd;
+    border-style: solid;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-top-width:1px;
+	border-right-width:1px;
+}
+
+#divNav {
+	border-color:#ddd;
+    border-style: solid;
+	border-bottom-width:0px;
+	border-left-width:1px;
+	border-top-width:0px;
+	border-right-width:1px;
+	
+	padding:2px;
+	background-color:#EEF5F9;
+	text-align:right;
+	min-height:25px;
+}
+
+#divCmd {
+	border-color:#ddd;
+    border-style: solid;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-top-width:1px;
+	border-right-width:0px;
+	width:100%;
+	display:table;
+}

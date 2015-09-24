@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<script language="javascript" src="../../../../js/jquery.js"></script>
+<script language="javascript" src="../../../../js/common.js"></script>
+<script language="javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+<link href="../../../../js/scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/tsm-icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/right.css" />
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>  
+	<body >
+	    <div id="divNav">
+            <div style="text-align:left;float:left; margin-top:3px;" class="ico_win">特殊单位</div>
+        </div>
+        
+        <div id="divCmd">
+            <table border="0" align="left" cellpadding="4" cellspacing="4">
+                <tr>
+                    <td width=80 align=right>名称： </td>
+                    <td>
+                        <input id="no" name="no" class="txt_input" />
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onClick="">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table id="tssGrid" class="easyui-datagrid" align="center" 
+				data-options="
+					autoRowHeight:false,fitColumns:true,
+                    width: getWidth(),         
+               		 height: getHeight(), 
+                    toolbar: '#tb',
+					pagination:true,
+					pageSize:50,
+					loadMsg:'数据正在努力加载中...'
+					">
+                    <thead >
+                    	<th data-options="field:'xxx0',width:50,checkbox:true">id</th>
+                        <th data-options="field:'xxx1',width:120">请求编号</th>
+                        <th data-options="field:'xxx21',width:180">别名</th>
+                        <th data-options="field:'xxx22',width:180">查询语句</th>
+                        <th data-options="field:'xxx3',width:80">状态</th>
+                        <th data-options="field:'xxx4',width:80">结果</th>
+                        <th data-options="field:'xxx5',width:180">创建时间</th>
+                        <th data-options="field:'xxx6',width:180">申请时间</th>
+                        <th data-options="field:'xxx7',width:180">关闭时间</th>
+                        <th data-options="field:'xxx8',width:80">留言</th>
+						<th data-options="field:'xxx12',width:250">操作</th>
+				</thead> 
+				<tbody>
+                    <tr>
+                    	<td></td>
+                        <td>ZZYH_20140414</td>
+                        <td>中国银行_查询子行信息</td>
+                        <td>192.168.1.1 AND 192.168.1.2</td>
+                        <td>申请</td>
+                        <td>有效</td>
+                        <td>2013-10-10 10:10:10</td>
+                        <td>2013-10-10 10:10:10</td>
+                        <td>2013-10-10 10:10:10</td>
+                        <td></td>
+                        <td>查看、编辑（处理、关闭、留言）、删除</td>
+                    </tr>
+            	</tbody>
+			</table>
+            <div id="tb" style="height: auto">
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>
+            </div>
+	</body>
+</html>
+
+ 

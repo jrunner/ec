@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.3.5/themes/tsm/easyui.css">
+<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+
+<script>
+	function onAddNode(){
+		var text = document.getElementById('key').value;
+		var url = 'demo.html';
+		window.parent.leftFrame.onAddNode(null,url,text);
+	}
+	function onRemoveNode(){
+		var id = document.getElementById('delid').value;
+		window.parent.leftFrame.onRemoveNode(null,id);
+	}
+	function onEditNode(){
+		var id = document.getElementById('editid').value;
+		var text = document.getElementById('edittext').value;
+		window.parent.leftFrame.onEditNode(null,id,text);
+	}
+</script> 
+
+	
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>绩效考核</title>
+	
+</head>
+<body class="easyui-layout" data-options="fit:true,border:false" style="font-size:12px">
+		<div title="Home">
+		<div class="cs-home-remark" style="padding: 15px">
+		要添加的节点ID和Text：<input id="key"/><input value="添加树节点" type="button" onclick="onAddNode()">
+		<br>
+		要删除的节点ID：<input id="delid"/><input value="删除树节点" type="button" onclick="onRemoveNode()">
+		<br>
+		要修改的节点ID：<input id="editid"/> 修改后的Text：<input id="edittext"/><input value="修改树节点" type="button" onclick="onEditNode()">
+		</div>
+		</div>
+	</div>
+</body>

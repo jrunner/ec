@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<action-mappings>
+		<action parameter="cmd" path="/baseinfo/vipunit" type="com.topsec.tss.web.action.baseinfo.VipUnitAction" scope="request">
+			<forward name="baselist" path="/jsp/web/baseinfo/vipunit/baselist.jsp"></forward>
+			<forward name="sublist" path="/jsp/web/baseinfo/vipunit/sublist.jsp"></forward>
+			<forward name="unitlist" path="/jsp/web/baseinfo/vipunit/unitlist.jsp"></forward>
+			
+			<forward name="subupdate" path="/jsp/web/baseinfo/vipunit/subupdate.jsp"></forward>
+			<forward name="baseupdate" path="/jsp/web/baseinfo/vipunit/baseupdate.jsp"></forward>
+		</action>
+	</action-mappings>
+
+</struts-config>
+

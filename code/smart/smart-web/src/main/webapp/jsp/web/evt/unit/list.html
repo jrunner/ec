@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<script language="javascript" src="../../../../js/jquery.js"></script>
+<script language="javascript" src="../../../../js/common.js"></script>
+<script language="javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+<link href="../../../../js/scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css">
+<script src="../../../../js/scripts/boot.js" type="text/javascript"></script> 
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/tsm-icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/tssEasy.css" />
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/right.css" />
+
+<script>
+ $(document).ready(function(){
+	 grid = $("#tssGrid"); 
+	 grid.datagrid({
+		 onRowContextMenu: onRowContextMenu //右键。[表头(tab)右键onHeaderContextMenu,树形(tree)右键onContextMenu]
+	 });
+ });
+
+ //右键功能
+function onRowContextMenu(e, rowIndex, rowData){
+	e.preventDefault();
+	var selected=grid.datagrid('getRows'); //获取所有行集合对象
+	var idValue = selected[rowIndex].id;
+	$(this).datagrid('selectRecord', idValue);  //通过获取到的id的值做参数选中一行
+	$('#mm').menu('show', {
+		left:e.pageX,
+		top:e.pageY
+	});        
+} 
+</script>
+	
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>  
+	<body >
+    	<div id="divNav">
+            <div style="text-align:left;float:left; margin-top:3px;" class="ico_win">单位</div>
+        </div>
+        
+        <div id="divCmd">
+            <table border="0" align="left" cellpadding="4" cellspacing="4">
+                <tr>
+                    <td width=80 align=right>名称： </td>
+                    <td>
+                        <input id=no class=txt_input name=no>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onClick="">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <table id="tssGrid" class="easyui-datagrid" align="center"
+            data-options="rownumbers:true,
+                autoRowHeight:false,
+                loadMsg:'数据正在努力加载中...',
+                width: getWidth(),         
+                height: getHeight(), fitColumns:true,
+                toolbar: '#tb'
+                ">
+            <thead>
+                <tr>
+                    <th data-options="field:'1',width:50,checkbox:true">id</th>
+                    <th data-options="field:'2'">所属行业</th>
+                    <th data-options="field:'3'">单位名称</th>
+                    <th data-options="field:'4'">城市</th>
+                    <th data-options="field:'5'">邮编</th>
+                    <th data-options="field:'6'">传真</th>
+                    <th data-options="field:'7'">通讯地址</th>
+                    <th data-options="field:'8'">单位类型</th> 
+                    <th data-options="field:'9'">联系人</th>
+                    <th data-options="field:'10'">IP地址</th>
+                    <th data-options="field:'11'">域名</th>
+                    <th data-options="field:'12'">创建时间</th>
+                </tr>
+            </thead>                
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>银行</td>
+                    <td>中国银行</td>
+                    <td>北京</td>
+                    <td>100085</td>
+                    <td>010-12345678</td>
+                    <td>北京市海淀区上地东路1号华控大厦</td>
+                    <td></td>
+                    <td>192.168.1.1</td>
+                    <td></td>
+                    <td></td>
+                    <td>2014-04-15</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>银行</td>
+                    <td>北京银行</td>
+                    <td>北京</td>
+                    <td>100085</td>
+                    <td>010-12345678</td>
+                    <td>北京市海淀区上地东路1号院八号楼</td>
+                    <td></td>
+                    <td>192.168.10.1</td>
+                    <td></td>
+                    <td></td>
+                    <td>2014-04-15</td>
+                </tr>
+            </tbody>
+        </table>
+
+		<div id="mm" class="easyui-menu" style="width: 120px;">
+			<div onClick="view()" data-options="iconCls:'icon-search'">查看</div>
+			<div onClick="add()" data-options="iconCls:'icon-add'">新增</div>
+			<div onClick="toUnitList('edit')" data-options="iconCls:'icon-edit'">编辑</div>
+			<div onClick="delUnit()" data-options="iconCls:'icon-remove'">删除</div>
+			<div class="menu-sep"></div>
+			<div onClick="print()" data-options="iconCls:'icon-print'">打印</div>
+			<div onClick="reload()" data-options="iconCls:'icon-reload'">刷新</div>
+		</div>
+		<div id="tb" style="height: auto">
+			<a href="unitlist.html" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onClick="">新增</a>
+			<a href="unitlist.html" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onClick="">编辑</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onClick="">删除</a>
+		</div>
+	</body>
+</html>
+
+ 

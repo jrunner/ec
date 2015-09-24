@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<script language="javascript" src="../../../js/jquery.js"></script>
+<script language="javascript" src="../../../js/common.js"></script>
+<script language="javascript" src="../../../js/My97DatePicker/WdatePicker.js"></script>
+<link href="../../../js/scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css">
+<script src="../../../js/scripts/boot.js" type="text/javascript"></script> 
+<link rel="stylesheet" type="text/css" href="../../../js/jquery-easyui-1.3.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../../../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../js/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../themes/css/tsm-icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../themes/css/right.css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>  
+	<body >
+		<div id="divNav">
+            <div style="text-align:left;float:left; margin-top:3px;" class="ico_win">重点单位</div>
+			<a href="javascript:JOpenAutoPage('upload.html','e',200,500)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" >上传</a>
+        </div>
+        
+        <div id="divCmd">
+            <table border="0" align="left" cellpadding="4" cellspacing="4">
+                <tr>
+                    <td width=80 align=right>IP地址： </td>
+                    <td>
+                        <input id=no class=txt_input name=no>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onClick="">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <table id="tssGrid" class="easyui-datagrid" align="center" 
+				data-options="rownumbers:true,
+					singleSelect:true,
+					autoRowHeight:false,
+                    width: getWidth(),         
+                	height: getHeight(), 
+                    toolbar: '#tb',
+					pagination:true,
+					pageSize:50,
+					loadMsg:'数据正在努力加载中...'
+					">
+                    <thead>
+                    <tr> 
+                    	<th data-options="field:'xxx1',width:80,checkbox:true">事件编号</th>
+                    	<th data-options="field:'xxx2',width:80">事件编号</th>
+                        <th data-options="field:'xxx3',width:80">事件类型	</th>
+                        <th data-options="field:'xxx4',width:100">涉及IP地址</th>
+                        <th data-options="field:'xxx5',width:160">单位</th>
+                        <th data-options="field:'xxx6',width:80">城市</th>
+                        <th data-options="field:'xxx7',width:80">运营商</th>
+                        <th data-options="field:'xxx8',width:160">第一时间</th>
+                        <th data-options="field:'xxx9',width:160">最后时间</th>
+                        <th data-options="field:'xxx10',width:80">原始事件数</th>
+                        <th data-options="field:'xxx11',width:140">备注</th>
+                        <th data-options="field:'xxx12',width:120">操作</th>
+					</tr>
+				</thead>
+               <tbody>
+                <tr>
+                	<td></td>
+                    <td>01</td>
+                    <td>木马控制</td>
+                    <td>192.168.72.138</td>
+                    <td>天融信软件有限公司</td>
+                    <td>北京</td>
+                    <td>电信</td>
+                    <td>2014-04-01 12:12:08</td>
+                    <td>2014-04-01 12:12:10</td>
+                    <td>116</td>
+                    <td>木马控制</td>
+                    <td>查看 | 确认 | 忽略</td>
+                </tr>
+            </tbody>
+			</table>
+            <div id="tb" style="height: auto">
+            <a href="javascript:JOpenAutoPage('ok.html','e',200,500)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onClick="">确认</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onClick="">忽略</a>
+            </div>
+	</body>
+</html>
+
+ 

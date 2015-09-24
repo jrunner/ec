@@ -1,0 +1,50 @@
+/* CSS Document */
+ @CHARSET "UTF-8";
+ 
+.td_left_table_content {
+	background-image: url(../images/style/green/tab_12.gif)
+}
+
+.td_right_table_content {
+	background-image: url(../images/style/green/tab_16.gif)
+}
+
+.td_left_top_table {
+	background-image: url(../images/style/green/tab_03.gif)
+}
+
+.td_right_top_table {
+	background-image: url(../images/style/green/tab_07.gif)
+}
+
+.td_middle_table {
+	background-image: url(../images/style/green/tab_05.gif);
+	padding-top: 4px;
+}
+
+.td_left_buttom_table {
+	background-image: url(../images/style/green/tab_20.gif)
+}
+
+.td_middle_buttom_table {
+	background-image: url(../images/style/green/tab_21.gif)
+}
+
+.td_right_buttom_table {
+	background-image: url(../images/style/green/tab_22.gif)
+}
+
+.table_content {
+	text-align: center;
+	background-color: #c0de98;
+}
+
+.table_content_title_td {
+	background-image: url(../images/style/green/tab_14.gif);
+	line-height: 26px;
+}
+ 
+.td_global {
+	background-color: #f3ffe3
+}
+ 

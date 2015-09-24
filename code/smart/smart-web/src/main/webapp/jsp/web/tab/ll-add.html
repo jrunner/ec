@@ -1,0 +1,679 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+ 
+<script language="javascript" src="../../../js/busyload/cvi_busy_lib.js"></script>
+<script language="javascript" src="../../../js/busyload/pub_load.js"></script>
+ 
+<script language="javascript" src="../../../js/common.js"></script>
+<script language="javascript" src="../../../js/My97DatePicker/WdatePicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../themes/css/right.css" />
+ 
+<link rel="stylesheet" type="text/css" href="../../../themes/css/greenStyle.css" />
+<script src="../../../js/scripts/boot.js" type="text/javascript"></script> 
+<link href="../../../js/scripts/miniui/themes/default/skin.css" rel="stylesheet" type="text/css">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <style>
+
+  	/*只有下边框样式*/
+   .txt_input_underline{
+		font-size: 12px;
+		width: 160px;
+		border-bottom-width: 1px;
+		border-top-style: none;
+		border-right-style: none;
+		border-bottom-style: solid;
+		border-left-style: none;
+		border-bottom-color: #999;
+	}
+	.table_content_td_header{
+		padding-left:5px;
+		text-align:left;
+		color:#666
+	}
+	/*重写mini-buttonedit-border*/
+	.mini-buttonedit-border{
+		background:white;
+		border: solid #a5acb5;
+		width:auto;
+		height:19px;
+		display:block;
+		
+		position:relative;overflow:hidden;
+		padding-right:22px;padding-left:1px;
+		
+		border-bottom-width: 1px;
+		border-top-style: none;
+		border-right-style: none;
+		border-bottom-style: solid;
+		border-left-style: none;
+		border-bottom-color: #999;
+		width: 160px;
+	}
+ </style>
+<title>添加员工履历</title>
+<script type="text/javascript"> 
+	function save(){
+		alert(mini.get('txtName')+","+mini.get('txtSex').getValue());
+	}
+</script>
+</head>
+<body>
+	<form action="CompanyAction_list.do" name="form1" method="get">
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td >
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="15"  class="td_left_top_table"></td>
+							<td class="td_middle_table" valign="middle">
+								<div class="ico_win">履历</div></td>
+							<td class="td_middle_table">
+								<div class="title_oper">
+									
+								</div>
+							</td>
+							<td width="14" class="td_right_top_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="9" class="td_left_table_content">&nbsp;</td>
+						  <td class="td_global">
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="7" class="table_content_title_td"></td>
+									</tr>
+									<tr>
+										<td width="100" class="table_content_td">姓名：</td>
+					        		  	<td class="table_content_td_left" ><input class="txt_input_underline" name="txtName" id="txtName" /> </td>
+                                        <td width="100" class="table_content_td">性别：</td>
+										<td class="table_content_td_left">
+                                      <select class="mini-combobox txt_input_underline" id="txtSex" name="txtSex" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" style="width:160px;" >
+                                        	<option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                        </td>
+                                        <td width="100" class="table_content_td">民族：</td>
+								    <td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                        <td rowspan="5" width="100" class="table_content_td" style="padding:8px"><img width="100" height="120" /></td>
+									</tr>
+									<tr>
+									  <td width="100" class="table_content_td" >出生年月</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input" /></td>
+									  <td class="table_content_td" >籍    贯</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input2" /></td>
+									  <td class="table_content_td" >婚姻状况</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input3" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >政治面貌</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="" /></td>
+									  <td class="table_content_td" >健康状况</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="3" /></td>
+									  <td class="table_content_td" >户籍所在地</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="4" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >身份证号</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="5" /></td>
+									  <td class="table_content_td" >辖区派出所</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="6" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >家庭住址</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="7" /></td>
+									  <td class="table_content_td" >家庭电话</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="8" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >毕业院校</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="9" /></td>
+									  <td class="table_content_td" >学    历</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="10" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >专    业</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="12" /></td>
+									  <td class="table_content_td" > 存 档 地</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="11" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >语言能力</td>
+									  <td  colspan="3" class="table_content_td_left"><input class="txt_input_underline" name=""  style="width:500px;"/></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >现居住地</td>
+									  <td  colspan="3" class="table_content_td_left"><input class="txt_input_underline" name=""  style="width:500px;"/></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td  colspan="7" class="table_content_td" style="padding:10px 0px 10px 0px">
+                                      <textarea style="width:98%; color:#999" rows="5"  class="mini-textarea" emptyText="何年何月何日、经何人介绍加入中国共产党，何时转正..."></textarea> <br />
+                                      </td>
+								  </tr>
+									<tr>
+									  <td  colspan="7" class="table_content_td" style="padding:10px 0px 10px 0px">
+                                      <textarea style="width:98%; color:#999" rows="5"  class="mini-textarea" emptyText="何年何月何日、在何地参加工作..."></textarea> <br />
+									  </td>
+								  </tr>
+								</table>
+                          <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+								  <tr>
+									  <td width="56" rowspan="6" class="table_content_td">家庭主要成员情况</td>
+									  <td width="50" rowspan="2" class="table_content_td" >配偶</td>
+                                      <td width="177" class="table_content_td">姓  名</td>
+									  <td width="199" class="table_content_td">关 系</td>
+                                      <td width="226" class="table_content_td">年龄</td>
+									  <td width="264" class="table_content_td">工 作  单 位</td>
+                                      <td width="166" class="table_content_td">职 务</td>
+								  </tr>
+								  <tr>
+								    <td class="table_content_td"   height="26">
+								      <input class="txt_input_underline" name="a" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1172" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1173" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1174" />
+								    </td>
+								    <td width="166" class="table_content_td">
+								      <input class="txt_input_underline" name="1175" />
+								    </td>
+						        </tr>
+								  <tr height="26">
+								    <td rowspan="4" class="table_content_td">其它成员</td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="1180" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1179" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1178" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1177" />
+								    </td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="1176" />
+								    </td>
+						        </tr>
+								  <tr >
+								    <td class="table_content_td" height="26">
+								      <input class="txt_input_underline" name="1181" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1184" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1185" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1186" />
+								    </td>
+								    <td height="26"  class="table_content_td">
+								      <input class="txt_input_underline" name="1189" />
+								    </td>
+						        </tr>
+								  <tr height="26" >
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="1182" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1183" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1188" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1187" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1190" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td class="table_content_td" height="26" >
+								      <input class="txt_input_underline" name="1194" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1193" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1192" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1191" />
+								    </td>
+								    <td height="26" class="table_content_td" ><span class="tb_content_left">
+								      <input class="txt_input_underline" name="111082" />
+								    </span></td>
+							    </tr>
+								  <tr>
+								    <td rowspan="3" class="table_content_td" >&nbsp;</td>
+								    <td rowspan="3" class="table_content_td" >主要社会关系</td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="1195" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1197" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11103" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11107" />
+								    </td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="11108" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								      <input class="txt_input_underline" name="1196" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1198" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11101" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11105" />
+								    </td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="11109" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								      <input class="txt_input_underline" name="1199" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="11100" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11102" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="11106" />
+								    </td>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline" name="11110" />
+								    </td>
+							    </tr>
+							  </table>
+                            <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+								  <tr>
+									  <td width="115" rowspan="6" class="table_content_td">教育经历</td>
+									  <td width="234" class="table_content_td" >起止时间</td>
+                                      <td width="334" class="table_content_td">毕 业  院 校 及 专 业</td>
+									  <td width="225" class="table_content_td">证 明  人</td>
+                                      <td width="232" class="table_content_td">联系电话</td>
+								  </tr>
+								  <tr>
+								    <td width="234" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline  txt_input_date" style="width:100px;" name="input4" />
+								      </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="112" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="117" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1116" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td width="234" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="113" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="118" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1115" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td width="234" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="114" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="119" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1114" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td width="234" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="115" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1110" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1113" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td width="234" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="116" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1111" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1112" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td rowspan="7" class="table_content_td" >培训经历</td>
+								    <td class="table_content_td" >起止时间</td>
+								    <td class="table_content_td" >培 训  内 容</td>
+								    <td class="table_content_td" >培训机构</td>
+								    <td class="table_content_td" >证书/资质</td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1119" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1117" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1121" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1123" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1118" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1120" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1122" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1124" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1128" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1127" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1126" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1125" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1129" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1132" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1135" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1138" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1130" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1133" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1136" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1139" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								      <input class="txt_input_underline txt_input_date" name="1131" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1134" />
+								    </td>
+								    <td class="table_content_td">
+								      <input class="txt_input_underline" name="1137" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1140" />
+								    </td>
+							    </tr>
+							  </table>
+                              
+                            <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+								  <tr>
+									  <td width="116" rowspan="7" class="table_content_td">工作情况</td>
+									  <td width="234" class="table_content_td" >时   间</td>
+                                      <td width="181" class="table_content_td">工  作  单  位</td>
+									  <td width="189" class="table_content_td">职 位</td>
+									  <td width="200" class="table_content_td">证 明  人</td>
+                                      <td width="219" class="table_content_td">联系电话</td>
+								  </tr>
+								  <tr>
+								    <td height="26" class="table_content_td" >
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1147" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1153" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1159" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1160" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1148" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1154" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1162" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1161" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1149" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1155" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1163" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1164" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1150" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1156" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1165" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1166" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1151" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1157" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1167" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1168" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="26" class="table_content_td">
+								       <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								      &nbsp;至&nbsp;
+								      <input class="txt_input_underline txt_input_date" style="width:100px;" name="input4" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1152" />
+								    </td>
+								    <td class="table_content_td" ><input class="txt_input_underline" name="1158" /></td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1169" />
+								    </td>
+								    <td class="table_content_td" >
+								      <input class="txt_input_underline" name="1170" />
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="60" class="table_content_td">涉密情况</td>
+								    <td colspan="5" class="table_content_td" style="padding:10px 0px 10px 0px">
+								      <textarea name="textarea3" style="width:90%; color:#999" rows="5" class="txt_input_underline" id="textarea3"></textarea>
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="60" class="table_content_td"><p>专业技术职称</p></td>
+								    <td colspan="5" class="table_content_td" style="padding:10px 0px 10px 0px">
+								      <textarea name="textarea4" style="width:90%; color:#999" rows="5" class="txt_input_underline" id="textarea4"></textarea>
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="60" class="table_content_td"><p>专有技术/科研成果</p></td>
+								    <td colspan="5" class="table_content_td" style="padding:10px 0px 10px 0px">
+								      <textarea name="textarea5" style="width:90%; color:#999" rows="5" class="txt_input_underline" id="textarea5"></textarea>
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="60" class="table_content_td"><p>有无犯罪或处分记录</p></td>
+								    <td colspan="5" class="table_content_td" style="padding:10px 0px 10px 0px">
+								      <textarea name="textarea6" style="width:90%; color:#999" rows="5" class="txt_input_underline" id="textarea6"></textarea>
+								    </td>
+							    </tr>
+								  <tr>
+								    <td height="29" colspan="6" class="table_content_td"><input type="button" class="btn_input" value="保存" onclick="save()" /></td>
+							    </tr>
+							  </table>
+							</td>
+							<td width="9" class="td_right_table_content">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="29">
+						<tr>
+							<td width="15" class="td_left_buttom_table"></td>
+							<td class="td_middle_buttom_table">&nbsp;</td>
+							<td width="14" class="td_right_buttom_table"></td>
+						</tr>
+					</table></td>
+			</tr>
+		</table><br />
+        
+   
+    
+</body>
+</html>
+  
+ 
+ 
+ 
+

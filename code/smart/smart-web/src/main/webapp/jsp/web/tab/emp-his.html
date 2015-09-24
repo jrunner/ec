@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>人员变动历史列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../themes/css/right.css" />
+<link rel="stylesheet" type="text/css" href="../../../themes/css/greenStyle.css" />
+
+</head>
+
+<body>
+<head>
+<title>列表</title>
+
+</head>
+<body>
+	<form action="CompanyAction_list.do" name="form1" method="get">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="30">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="15" height="30" class="td_left_top_table"></td>
+							<td class="td_middle_table" valign="middle">
+								<div class="ico_win">人员变动历史信息</div></td>
+							<td class="td_middle_table">
+								<div class="title_oper">
+									<a href="CompanyAction_toUpdate.do">新建</a> | <a href="javascript:del()">删除</a>  
+								</div>
+							</td>
+							<td width="14" class="td_right_top_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="9" class="td_left_table_content">&nbsp;</td>
+							<td class="td_global">
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="2" class="table_content_title_td"></td>
+									</tr>
+									<tr>
+										<td class="table_content_td">名称：</td>
+										<td class="table_content_td"><input class="txt_input" name="company.companyName"/></td>
+									</tr>
+									<tr>
+										<td colspan="2" class="table_content_td" height="30"><input type="button" class="btn_input" value="查询" onclick="search()" /></td>
+									</tr> 
+								</table>
+								<div class="div_split"></div>
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" onmouseover="JEventChangeTo()" onmouseout="JEventChangeBack()" class="table_content">
+									<tr>
+										<td width="6%" class="table_content_title_td"><input name="ckItems" id="JCkItems" type="checkbox" value="checkbox" /></td>
+										<td height="18" class="table_content_title_td">工号</td>
+										<td height="18" class="table_content_title_td">姓名</td>
+										<td height="18" class="table_content_title_td">职务</td>
+										<td height="18" class="table_content_title_td">部门</td>
+										<td height="18" width="10%" class="table_content_title_td">动作</td>
+										<td height="18" width="10%" class="table_content_title_td">时间</td>
+										<td height="18" width="10%" class="table_content_title_td">备注</td>
+										<td height="18" width="10%" class="table_content_title_td">附件</td>
+										<td height="18" width="10%" class="table_content_title_td">操作</td>
+									</tr>
+									<tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >0901</td>
+										<td class="table_content_td">张三</td>
+										<td class="table_content_td" >研发工程师</td>
+										<td class="table_content_td">研发部门</td>
+										<td class="table_content_td pl3">入职</td>
+										<td class="table_content_td pl3">2013-07-01</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="?cmd=view&id=">详情</a>] [<a href="CompanyAction_toUpdate?id=">编辑</a>] [<a href="javascript:del('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >0901</td>
+										<td class="table_content_td">张三</td>
+										<td class="table_content_td" >研发工程师</td>
+										<td class="table_content_td">研发部门</td>
+										<td class="table_content_td pl3">转正</td>
+										<td class="table_content_td pl3">2013-07-01</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="?cmd=view&id=">详情</a>] [<a href="CompanyAction_toUpdate?id=">编辑</a>] [<a href="javascript:del('')">删除</a>]</td>
+									</tr>
+									
+								</table>
+							
+								<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0" class="table_content_page">
+									<tr>
+										<td class="table_content_title_td"><div class="pageStyle">
+							<a href="javascript:page_first();"><img src="../../../themes/images/style/green/first.gif" align="absbottom" style="width:37px; height:15px; border:0px;" /></a> 
+							<a href="javascript:page_pre();"><img src="../../../themes/images/style/green/back.gif" align="absbottom" style="width:43px; height:15px; border:0px;" /></a>
+							<a href="javascript:page_next();"><img src="../../../themes/images/style/green/next.gif" align="absbottom" style="width:43px; height:15px; border:0px;"/></a> 
+							<a href="javascript:page_last();"><img src="../../../themes/images/style/green/last.gif" align="absbottom" style="width:37px; height:15px; border:0px;"/></a>
+							共0条记录,&nbsp;
+							当前第1/1页, 
+							每页<input name="pageResult.pageSize" value="10" size="3" style="height: 12px; width: 35px;" maxlength="8" />条,
+							转到第<input name="pageResult.pageNo" value="1" size="3" style="height: 12px; width: 35px;" maxlength="8"  />页&nbsp;<img src="../../../themes/images/style/green/go.gif" align="absbottom" style="width:37px; height:15px; cursor:hand;" onclick="page_go();" />
+							<input type="hidden" name="pageResult.orderBy"  value="" />
+							<input type="hidden" name="pageResult.sort"  value="asc" />
+							<script> 
+								var pageTotal = 1;
+								var recTotal = 0;
+							</script>
+							</div>
+							<script> 
+							function page_go()
+							{
+								page_validate();		
+								document.forms['form1'].submit();
+							}
+							function page_first()
+							{
+								document.forms['form1'].elements["pageResult.pageNo"].value = 1;
+								document.forms['form1'].submit();
+							}
+							function page_pre()
+							{
+								var pageNo = document.forms['form1'].elements["pageResult.pageNo"].value;
+								document.forms['form1'].elements["pageResult.pageNo"].value = parseInt(pageNo) - 1;
+								page_validate();
+								document.forms['form1'].submit();
+							}
+							function page_next()
+							{
+								var pageNo = document.forms['form1'].elements["pageResult.pageNo"].value;
+								document.forms['form1'].elements["pageResult.pageNo"].value = parseInt(pageNo) + 1;
+								page_validate();
+								document.forms['form1'].submit();
+							}
+							function page_last()
+							{
+								document.forms['form1'].elements["pageResult.pageNo"].value = pageTotal;
+								document.forms['form1'].submit();
+							}
+							function page_validate()
+							{
+								var pageNo = document.forms['form1'].elements["pageResult.pageNo"].value;
+								if (pageNo<1)pageNo=1;
+								if (pageNo>pageTotal)pageNo=pageTotal;
+								document.forms['form1'].elements["pageResult.pageNo"].value = pageNo;
+								var pageSize = document.forms['form1'].elements["pageResult.pageSize"].value;
+								if (pageSize<1)pageSize=1;
+								document.forms['form1'].elements["pageResult.pageSize"].value = pageSize;
+							}
+							function order_by(field){
+								document.forms['form1'].elements["pageResult.orderBy"].value = field;
+								page_first();
+							}
+							</script>
+							 
+							
+								</td>
+									</tr>
+								</table>
+								</td>
+							<td width="9" class="td_right_table_content">&nbsp;</td>
+						</tr>
+					</table></td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="29">
+						<tr>
+							<td width="15" class="td_left_buttom_table"></td>
+							<td class="td_middle_buttom_table">&nbsp;</td>
+							<td width="14" class="td_right_buttom_table"></td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

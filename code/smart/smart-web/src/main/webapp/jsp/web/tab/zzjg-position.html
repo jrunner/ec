@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>岗位列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../themes/css/right.css" />
+<link rel="stylesheet" type="text/css" href="../../../themes/css/greenStyle.css" />
+<script language="javascript" src="../../../js/common.js"></script>
+<script language="javascript" src="../../../js/jquery.js"></script>
+
+	<script>
+		function tsmToEdit(id,name,remark,code){
+			$('#txtName').val(name);
+			$('#txtRemark').val(remark);
+			$('#txtCode').val(code);
+			$('#txtId').val(id);
+		}
+		
+		function tsmSave(id,name,remark,code){
+			$('#txtName').val(name);
+			$('#txtRemark').val(remark);
+			$('#txtCode').val(code);
+			$('#txtId').val(id);
+		}
+		
+		function tsmDel(id){
+			if(confirm('确定要记录删除吗？')){
+				alert('删除成功!');
+			}
+		}
+		
+		//导出
+		function tsmExp(){
+			window.location = '/xweb/dataImport.do?cmd=exp';
+		}
+		//导入
+		function tsmImp(){
+			window.location = '../emp/dataImport.jsp';
+		}
+    </script>
+</head>
+
+<body>
+<head>
+<title>列表</title>
+
+</head>
+<body>
+	<form action="CompanyAction_list.do" name="form1" method="get">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="30">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="15" height="30" class="td_left_top_table"></td>
+							<td class="td_middle_table" valign="middle">
+								<div class="ico_win">岗位分类</div></td>
+                                <td class="td_middle_table">
+                                    <div class="title_oper">
+                                        <a href="javascript:tsmDel()" class="ico_del">删除</a>&nbsp;&nbsp;
+                                        <a href="javascript:tsmImp()" class="ico_imp">导入</a>&nbsp;&nbsp;
+                                        <a href="javascript:tsmExp()" class="ico_exp">导出</a> 
+                                    </div>
+                                </td>
+                                <td width="14" class="td_right_top_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="9" class="td_left_table_content">&nbsp;</td>
+							<td class="td_global">
+                            	<input  type="hidden" name="txtId" id="txtId" /> 
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="2" class="table_content_title_td"></td>
+									</tr>
+									<tr>
+										<td width="150" class="table_content_td">名&nbsp;&nbsp;&nbsp;&nbsp;称：</td>
+									  <td  class="table_content_td_left"><input class="txt_input"  name="txtName" id="txtName" /> </td>
+									</tr>
+                                    <tr>
+										<td width="150" class="table_content_td">优先级：</td>
+									  <td  class="table_content_td_left"><input class="txt_input"  name="txtCode" id="txtCode" /> </td>
+									</tr>
+									<tr>
+										<td class="table_content_td">备&nbsp;&nbsp;&nbsp;&nbsp;注：</td>
+										<td class="table_content_td_left"><input class="txt_input" name="txtRemark" id="txtRemark" style="width:340px;"/> </td>
+									</tr>
+									<tr>
+										<td colspan="2" class="table_content_td" height="30" align="left"><span style="margin-left:250px;"><input type="button" class="btn_input" value="保存" onclick="changeRows()" /></span></td>
+									</tr>
+								</table>
+								<div class="div_split"></div>
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" onmouseover="JEventChangeTo()" onmouseout="JEventChangeBack()" class="table_content">
+									<tr>
+										<td width="5%" height="18"  class="table_content_title_td"><input name="ckItems" id="JCkItems" type="checkbox" value="checkbox" /></td>
+										<td width="5%" class="table_content_title_td">序号</td>
+										<td width="20%" class="table_content_title_td">名称</td>
+										<td width="20%" class="table_content_title_td">创建时间</td>
+										<td width="10%" class="table_content_title_td">优先级</td>
+										<td width="20%" class="table_content_title_td">备注</td>
+										<td width="10%" class="table_content_title_td">操作</td>
+									</tr>
+									<tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >1</td>
+										<td class="table_content_td">研发工程师</td>
+										<td class="table_content_td" >2013-03-04</td>
+										<td class="table_content_td">1</td>
+										<td class="table_content_td pl3">测试</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试','1')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >2</td>
+										<td class="table_content_td" >测试工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">2</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >3</td>
+										<td class="table_content_td" >产品工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">3</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+                                    <tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >4</td>
+										<td class="table_content_td">研发工程师</td>
+										<td class="table_content_td" >2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">测试</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >5</td>
+										<td class="table_content_td" >测试工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >6</td>
+										<td class="table_content_td" >产品工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+                                    <tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >7</td>
+										<td class="table_content_td">研发工程师</td>
+										<td class="table_content_td" >2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">测试</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >8</td>
+										<td class="table_content_td" >测试工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >9</td>
+										<td class="table_content_td" >产品工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+                                    <tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >10</td>
+										<td class="table_content_td">研发工程师</td>
+										<td class="table_content_td" >2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">测试</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >12</td>
+										<td class="table_content_td" >产品工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+                                    <tr>
+										<td class="table_content_td" height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >13</td>
+										<td class="table_content_td">研发工程师</td>
+										<td class="table_content_td" >2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">测试</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >14</td>
+										<td class="table_content_td" >测试工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+									<tr>
+										<td class="table_content_td"  height="26"><input name="ckItem" id="JCkItem" type="checkbox" value="checkbox" /></td>
+										<td class="table_content_td" >15</td>
+										<td class="table_content_td" >产品工程师</td>
+										<td class="table_content_td">2013-03-04</td>
+										<td class="table_content_td">4</td>
+										<td class="table_content_td pl3">暂无</td>
+										<td class="table_content_td">[<a href="javascript:tsmToEdit('1','研发工程师','测试')">编辑</a>] [<a href="javascript:tsmDel('')">删除</a>]</td>
+									</tr>
+								</table>
+							
+								<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0" class="table_content_page">
+									<tr>
+										<td class="table_content_title_td">&nbsp;
+									</td>
+									</tr>
+								</table>
+								</td>
+							<td width="9" class="td_right_table_content">&nbsp;</td>
+						</tr>
+					</table></td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="29">
+						<tr>
+							<td width="15" class="td_left_buttom_table"></td>
+							<td class="td_middle_buttom_table">&nbsp;</td>
+							<td width="14" class="td_right_buttom_table"></td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
