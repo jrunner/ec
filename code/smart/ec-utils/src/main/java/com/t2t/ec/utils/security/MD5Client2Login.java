@@ -28,9 +28,9 @@ public class MD5Client2Login {
 		String pwd = "111";
 		try {
 			if (valid(loginUserId, pwd)) {
-				System.out.println("欢迎登陆！！！");
+				//System.out.println("欢迎登陆！！！");
 			} else {
-				System.out.println("口令错误，请重新输入！！！");
+				//System.out.println("口令错误，请重新输入！！！");
 			}
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
@@ -58,7 +58,7 @@ public class MD5Client2Login {
 		if (null != pwdInDb) { // 该用户存在
 			return MD5Util.compare(password, pwdInDb);
 		} else {
-			System.out.println("不存在该用户！！！");
+//			System.out.println("不存在该用户！！！");
 			return false;
 		}
 	}

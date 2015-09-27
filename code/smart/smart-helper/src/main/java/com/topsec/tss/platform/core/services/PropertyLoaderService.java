@@ -1,5 +1,19 @@
 package com.topsec.tss.platform.core.services;
 
+import com.topsec.tss.platform.core.utils.Utils;
+import com.topsec.tss.platform.log.PlatformLogger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.namespace.QName;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
@@ -10,40 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.namespace.QName;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import com.topsec.tss.platform.core.utils.Utils;
-import com.topsec.tss.platform.log.PlatformLogger;
-
-
-/**
- * 
- * This server will fill the target service fields from configuration XML file.
- * 
- * This server will fill the target service fields from configuration XML file.
- * 
- * @title PropertyLoaderService
- * @package com.topsec.tss.core.platform.core.services
- * @author baiyanwei
- * @version 1.0
- * @date 2014-5-15
- * 
- */
 @ServiceInfo(description = "Provides the ability to merge extension properties with configured properties.")
 public class PropertyLoaderService implements IService {
 
@@ -65,7 +46,6 @@ public class PropertyLoaderService implements IService {
 
     }
 
-    @Override
     public void start() throws Exception {
 
         readDocument(getServiceConfigurationPath());
@@ -73,7 +53,6 @@ public class PropertyLoaderService implements IService {
         theLogger.info("PropertyLoaderService is started~");
     }
 
-    @Override
     public void stop() throws Exception {
 
     }
@@ -83,7 +62,7 @@ public class PropertyLoaderService implements IService {
      * 
      */
     private void readextProperty() {
-
+        if(true)return;
         NodeList preportyList = _userDocument.getElementsByTagName(EXTEND_RESOURCE_NAME);
         if (preportyList == null || preportyList.getLength() == 0) {
             return;
@@ -137,7 +116,6 @@ public class PropertyLoaderService implements IService {
      * This method loads up the properties document. It will load two based on the file name and default file name properties.
      * 
      * @param fileName
-     * @param defaultName
      */
     public boolean readDocument(String fileName) {
 
@@ -148,8 +126,6 @@ public class PropertyLoaderService implements IService {
     /**
      * This method loads up the properties document. It will take the supplied input stream and use it as the method to load the xml document.
      * 
-     * @param fileName
-     * @param defaultName
      */
     public boolean create(InputStream inputStream) {
 

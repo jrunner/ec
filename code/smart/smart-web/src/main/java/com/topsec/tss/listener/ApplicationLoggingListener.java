@@ -29,12 +29,11 @@ public class ApplicationLoggingListener implements ServletContextListener {
      */
     final private static PlatformLogger theLogger = PlatformLogger.getLogger(ApplicationLoggingListener.class);
 
-    @Override
     public void contextDestroyed(ServletContextEvent arg0) {
 
     }
 
-    @Override
+
     public void contextInitialized(ServletContextEvent arg0) {
 
         theLogger.info("startRegisterLogger");

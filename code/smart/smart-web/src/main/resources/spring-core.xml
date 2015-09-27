@@ -1,114 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context-4.0.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-	http://www.springframework.org/schema/aop
-	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <!-- Activates scanning of @Autowired -->
+    <context:annotation-config/>
 
-	<!-- 读取数据库配置信息 -->
-	<context:property-placeholder location="classpath:jdbc.properties" />
+    <context:component-scan base-package="com.topsec.tss.**"/>
 
-	<context:component-scan base-package="com.dmis.top.*"></context:component-scan>
+    <!-- 读取数据库配置信息 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
 
-	<!-- 系统数据源配置 -->
-	<!-- 配置dataSource 当前操作的安全事件数据库数据源 -->
-	<bean id="dataSource" destroy-method="close"
-		class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="${jdbc.driverClassName}" />
-		<property name="jdbcUrl" value="${jdbc.url}" />
-		<property name="user" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
-		<property name="initialPoolSize" value="1" />
-		<!--连接池中保留的最小连接数。 -->
-		<property name="minPoolSize" value="1" />
-		<!--连接池中保留的最大连接数。Default: 15 -->
-		<property name="maxPoolSize" value="300" />
-		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
-		<property name="maxIdleTime" value="60" />
-		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
-		<property name="acquireIncrement" value="5" />
-		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
-		<property name="idleConnectionTestPeriod" value="60" />
-	</bean>
+    <!-- 系统数据源配置 -->
+    <!-- 配置dataSource 当前操作的安全事件数据库数据源 -->
+    <bean id="dataSource" destroy-method="close" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClassName}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+        <property name="initialPoolSize" value="1"/>
+        <!--连接池中保留的最小连接数。 -->
+        <property name="minPoolSize" value="1"/>
+        <!--连接池中保留的最大连接数。Default: 15 -->
+        <property name="maxPoolSize" value="300"/>
+        <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+        <property name="maxIdleTime" value="60"/>
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement" value="5"/>
+        <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+        <property name="idleConnectionTestPeriod" value="60"/>
+    </bean>
 
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
-				<prop key="hibernate.format_sql">true</prop>
-				<prop key="hibernate.jdbc.fetch_size">80</prop>
-				<prop key="hibernate.jdbc.batch_size">35</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
-				<!--<prop key="connection.autocommit">true</prop> -->
-				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext
-				</prop>
-			</props>
-		</property>
+    <!-- Mybatis 配置段 current数据源配置 -->
+    <!-- SessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--<property name="mapperLocations" value="classpath*:mapper/*.xml"/>-->
+    </bean>
+    <!-- 事务配置 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 自动描述map.xml文件 -->
+    <bean id="mybatisMapperScaner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.topsec.tss.core.web.resource.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
 
-		<property name="annotatedClasses">
-			<list>
-				<value>com.dmis.top.persistence.RptTemplate</value>
-				<value>com.dmis.top.persistence.RptGroup</value>
-				<value>com.dmis.top.persistence.RptFile</value>
+    <!-- Mybatis 配置段  历史数据库数据源 -->
+    <!-- SessionFactory  自动描述map.xml文件 -->
+    <bean id="historyMybatisMapperScaner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.topsec.tss.core.web.resource.history.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="historySqlSessionFactory"/>
+    </bean>
 
-				<value>com.dmis.top.persistence.Employee</value>
-				<value>com.dmis.top.persistence.EmployeeHistory</value>
-				<value>com.dmis.top.persistence.Annex</value>
-			</list>
-		</property>
-	</bean>
-
-	<bean id="txManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-
-	<tx:annotation-driven transaction-manager="txManager" />
-
-	<!-- wink # -->
-	<bean id="com.dmis.top.rest.EventResource" class="com.dmis.top.rest.EventResource">
-		<property name="eventService" ref="eventServiceImpl" />
-	</bean>
-	<bean id="com.dmis.top.rest.RedisResource" class="com.dmis.top.rest.RedisResource">
-		<property name="redisService" ref="redisServiceImpl" />
-	</bean>
-	<bean class="org.apache.wink.spring.Registrar">
-		<property name="instances">
-			<set>
-				<ref bean="com.dmis.top.rest.EventResource" />
-				<ref bean="com.dmis.top.rest.RedisResource" />
-			</set>
-		</property>
-	</bean>
-	<!--# wink -->
-
-	<!-- redis # -->
-	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
-		<property name="maxIdle" value="${redis.maxIdle}" />
-		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
-	</bean>
-
-	<bean id="jedisConnectionFactory"
-		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-		p:host-name="${redis.host}" p:port="${redis.port}" p:pool-config-ref="poolConfig" />
-	<!--# redis -->
-
-	<!-- (多次测试结构)这里的EventService类没有采用注解，原因是spring的加载顺序导致。wink暂不支持注解，为了引用service层的接口，故配置到xml中 -->
-	<bean id="eventServiceImpl" class="com.dmis.top.service.impl.EventServiceImpl">
-		<property name="baseDao" ref="baseDaoImpl" />
-	</bean>
-	<bean id="redisServiceImpl" class="com.dmis.top.service.impl.RedisServiceImpl">
-		<property name="jedisConnectionFactory" ref="jedisConnectionFactory" />
-	</bean>
 </beans>
