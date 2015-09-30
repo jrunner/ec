@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+ 
+<script language="javascript" src="../../../js/busyload/cvi_busy_lib.js"></script>
+<script language="javascript" src="../../../js/busyload/pub_load.js"></script>
+ 
+<script language="javascript" src="../../../js/My97DatePicker/WdatePicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../themes/css/right.css" />
+ 
+<link rel="stylesheet" type="text/css" href="../../../themes/css/greenStyle.css" />
+<script src="/xweb/js/scripts/boot.js" type="text/javascript"></script> 
+<link href="../../../js/scripts/miniui/themes/default/skin.css" rel="stylesheet" type="text/css">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <style>
+
+  	/*只有下边框样式*/
+   .txt_input_underline{
+		font-size: 12px;
+		width: 160px;
+		border-bottom-width: 1px;
+		border-top-style: none;
+		border-right-style: none;
+		border-bottom-style: solid;
+		border-left-style: none;
+		border-bottom-color: #999;
+	}
+	.table_content_td_header{
+		padding-left:5px;
+		text-align:left;
+		color:#666
+	}
+	/*重写mini-buttonedit-border*/
+	.mini-buttonedit-border{
+		background:white;
+		border: solid #a5acb5;
+		width:auto;
+		height:19px;
+		display:block;
+		
+		position:relative;overflow:hidden;
+		padding-right:22px;padding-left:1px;
+		
+		border-bottom-width: 1px;
+		border-top-style: none;
+		border-right-style: none;
+		border-bottom-style: solid;
+		border-left-style: none;
+		border-bottom-color: #999;
+	}
+ </style>
+<title>添加员工信息</title>
+<script type="text/javascript"> 
+
+</script>
+</head>
+<body>
+	<form action="CompanyAction_list.do" name="form1" method="get">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td >
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="15"  class="td_left_top_table"></td>
+							<td class="td_middle_table" valign="middle">
+								<div class="ico_win">员工信息</div></td>
+							<td class="td_middle_table">
+								<div class="title_oper">
+									
+								</div>
+							</td>
+							<td width="14" class="td_right_top_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="9" class="td_left_table_content">&nbsp;</td>
+						  <td class="td_global">
+                              	<div style="height:8px;"></div>
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="7" class="table_content_title_td"><div class="table_content_td_header">基本信息</div></td>
+									</tr>
+									<tr>
+										<td width="120" class="table_content_td">姓名</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="" /> </td>
+                                        <td class="table_content_td">编号</td>
+										<td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                        <td class="table_content_td">出生年月</td>
+										<td class="table_content_td_left"><input class="txt_input_date txt_input_underline" name="" /> </td>
+                                        <td rowspan="5" width="100" class="table_content_td" style="padding:8px"><img width="100" height="120" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >性别</td>
+									  <td class="table_content_td_left" >
+                                        <select class="mini-combobox txt_input_underline" style="width:160px;" id="txtSex" emptyText="请选择..." nullItemText="请选择..." showNullItem="true">
+                                        	<option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                      </td>
+									  <td class="table_content_td" >婚否</td>
+									  <td class="table_content_td_left" >
+                                      <select class="mini-combobox txt_input_underline" id="txtSex" style="width:160px;"  emptyText="请选择..." nullItemText="请选择..." showNullItem="true">
+                                        	<option>是</option>
+                                            <option>否</option>
+                                        </select>
+                                      </td>
+									  <td class="table_content_td" >年龄</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline mini-spinner" name="input3"  minValue="15" maxValue="50" maxlength="3" text="20" style="width:160px;" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >身份证号</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="" /></td>
+									  <td class="table_content_td" >民族</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="3" /></td>
+									  <td class="table_content_td" >政治面貌</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="4" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >户口所在地</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="5" /></td>
+									  <td class="table_content_td" >档案所在地</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="6" /></td>
+									  <td class="table_content_td" >子女状况</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >家庭电话</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="7" /></td>
+									  <td class="table_content_td" >家庭住址</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="8" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >现联系方式</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="9" /></td>
+									  <td class="table_content_td" >现住址</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="10" /></td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+									  <td class="table_content_td" >&nbsp;</td>
+								  </tr>
+								</table>
+       			      <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="6" class="table_content_title_td"><div class="table_content_td_header">工作信息</td>
+									</tr>
+									<tr>
+										<td width="120" class="table_content_td">部门</td>
+									  <td width="220" class="table_content_td_left" ><input class="txt_input_underline mini-autocomplete" name="" style="width:160px;" /> </td>
+                                      <td width="120" class="table_content_td">入职时间</td>
+										<td width="220" class="table_content_td_left"><input class="txt_input_date txt_input_underline" name="" /> </td>
+                                        <td width="120" class="table_content_td">薪酬</td>
+										<td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                </tr>
+									<tr>
+									  <td class="table_content_td" >隶属关系</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input" /></td>
+									  <td class="table_content_td" >二级产品线/中心</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input2" /></td>
+									  <td class="table_content_td" >一级产品线/中心</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input3" /></td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >人员分类</td>
+									  <td class="table_content_td_left" >
+                                      	<select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" allowInput="true" style="width:160px;" >
+                                        	<option>科技公司</option>
+                                            <option>软件公司</option>
+                                        </select>
+                                      </td>
+									  <td class="table_content_td" >组别</td>
+									  <td class="table_content_td_left" >
+                                      	<select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" allowInput="true" style="width:160px;" >
+                                        	<option>科技公司</option>
+                                            <option>软件公司</option>
+                                        </select>
+                                      </td>
+									  <td class="table_content_td" >岗位</td>
+									  <td class="table_content_td_left" >
+                                      	<select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" allowInput="true" style="width:160px;" >
+                                        	<option>研发工程师</option>
+                                            <option>测试工程师</option>
+                                        </select>
+                                      </td>
+								  </tr>
+									<tr>
+									  <td class="table_content_td" >工作地点</td>
+									  <td class="table_content_td_left" >
+                                      <input class="txt_input_underline mini-autocomplete" name="" url="/xweb/ajax.do?cmd=list&type=POSITION"  
+                                      
+                                      style="width:160px;" />
+                                      </td>
+									  <td class="table_content_td" >工作地点（二级）</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="6" /></td>
+									  <td class="table_content_td" >分支机构类型</td>
+									 <td class="table_content_td_left" ><input class="txt_input_underline" name="6" /></td>
+								  </tr>
+								</table>
+                            <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="6" class="table_content_title_td"><div class="table_content_td_header">学历信息</td>
+									</tr>
+									<tr>
+										<td width="120" class="table_content_td">学历</td>
+										<td width="220" class="table_content_td_left" > 
+                                        <select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" style="width:160px;" >
+                                        	<option>专科</option>
+                                        	<option>本科</option>
+                                            <option>研究生</option>
+                                            <option>博士</option>
+                                        </select>
+                                      </td>
+                                        <td width="120" class="table_content_td">毕业院校</td>
+									  <td width="220" class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                        <td width="120" class="table_content_td">专业</td>
+									  <td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                </tr>
+									<tr>
+									  <td class="table_content_td" >参加工作时间</td>
+									  <td class="table_content_td_left" ><input class="txt_input_date txt_input_underline" name="input" /></td>
+									  <td class="table_content_td" >技术职称</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input2" /></td>
+									  <td class="table_content_td" >毕业时间</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input3" /></td>
+								  </tr>
+							</table>
+                                 <div style="height:8px;"></div>
+                              <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="6" class="table_content_title_td"><div class="table_content_td_header">合同信息</td>
+									</tr>
+									<tr>
+										<td width="120" class="table_content_td">合同起始日期</td>
+									  <td width="220" class="table_content_td_left" ><input class="txt_input_date txt_input_underline" name="" /> </td>
+                                        <td width="120" class="table_content_td">合同截至日期</td>
+									  <td width="220" class="table_content_td_left"><input class="txt_input_date txt_input_underline" name="" /> </td>
+                                        <td width="120" class="table_content_td">服务年限</td>
+									  <td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                </tr>
+									<tr>
+									  <td class="table_content_td" >服务年限分类</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline" name="input" /></td>
+									  <td class="table_content_td" >续签次数</td>
+									  <td class="table_content_td_left" ><input class="txt_input_underline mini-spinner" name="input3"  minValue="0" maxValue="10" maxlength="2" style="width:160px;" /></td>
+									  <td class="table_content_td" >合同是否到期</td>
+									  <td class="table_content_td_left" >
+                                        <select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" allowInput="true" style="width:160px;" >
+                                        	<option>是</option>
+                                            <option>否</option>
+                                        </select>
+                                      </td>
+								  </tr>
+							</table>
+                            <div style="height:8px;"></div>
+                            <table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+								  <tr>
+									  <td height="26" colspan="6" class="table_content_title_td"><div class="table_content_td_header">其他</td>
+								  </tr>
+								  <tr>
+									  <td width="120" class="table_content_td">离职时间</td>
+								    <td width="220" class="table_content_td_left" ><input class="txt_input_date txt_input_underline" name="" /> </td>
+                                      <td width="120" class="table_content_td">离职原因简述</td>
+								    <td width="220" class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                                      <td width="120" class="table_content_td">离职后去向</td>
+								    <td class="table_content_td_left"><input class="txt_input_underline" name="" /> </td>
+                              </tr>
+								  <tr>
+								    <td class="table_content_td" >可否再次雇佣</td>
+								    <td class="table_content_td_left" >
+	                                    <select class="mini-combobox txt_input_underline" emptyText="请选择..." nullItemText="请选择..." showNullItem="true" allowInput="true" style="width:160px;" >
+                                        	<option>是</option>
+                                            <option>否</option>
+                                        </select>
+                                    </td>
+								    <td class="table_content_td" >备注</td>
+								    <td colspan="3" class="table_content_td_left" ><input class="txt_input_underline" name="input2" style="width:420px;"/></td>
+							    </tr>
+								  <tr>
+								    <td class="table_content_td" >人员登记表</td>
+								    <td colspan="5" class="table_content_td_left" ><input class="txt_input_underline" name="input4" style="width:420px;"/></td>
+						      </tr>
+								  <tr>
+								    <td class="table_content_td" >告知书</td>
+								    <td colspan="5" class="table_content_td_left" ><input class="txt_input_underline" name="input5" style="width:420px;"/></td>
+						      </tr>
+								  <tr>
+								    <td class="table_content_td" >&nbsp;</td>
+								    <td height="29" colspan="5" align="center" class="table_content_td" ><input type="button" class="btn_input" value="查询" onclick="search()" />&nbsp;</td>
+						      </tr>
+						    </table>
+				      		</td>
+							<td width="9" class="td_right_table_content">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="29">
+						<tr>
+							<td width="15" class="td_left_buttom_table"></td>
+							<td class="td_middle_buttom_table">&nbsp;</td>
+							<td width="14" class="td_right_buttom_table"></td>
+						</tr>
+					</table></td>
+			</tr>
+		</table><br />
+        
+   
+    
+</body>
+</html>
+  
+ 
+ 
+ 
+

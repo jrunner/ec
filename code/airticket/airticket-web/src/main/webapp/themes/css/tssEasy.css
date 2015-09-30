@@ -1,0 +1,14 @@
+/* CSS Document */
+ @CHARSET "UTF-8";
+/*
+ * EasyUI定制样式
+ */
+.panel-body {
+	border-color:#ddd;
+    border-style: solid;
+	border-bottom-width:1px;
+	border-left-width:0px;
+	border-top-width:1px;
+	border-right-width:0px;
+}
+.checkbox_align{vertical-align:middle; margin-top:-2px; margin-bottom:1px;}

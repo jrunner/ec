@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<script language="javascript" src="../../../../js/jquery.js"></script>
+<script language="javascript" src="../../../../js/common.js"></script>
+<script language="javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+<link href="../../../../js/scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../js/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/tsm-icon.css" />
+<script> 
+function onAddNode(id,code,pcode,url,text,treeid,icon){
+	window.parent.onAddNode(null,id,code,pcode,url,text,treeid,icon);
+}
+function onRemoveNode(code,treeid){
+	window.parent.onRemoveNode(null,code,treeid);
+}
+function onEditNode(code,text,treeid){
+	window.parent.onEditNode(null,code,text,treeid);
+}
+function closeTab(){
+	window.parent.closeTab();
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/right.css" />
+<link rel="stylesheet" type="text/css" href="../../../../themes/css/blueStyle.css" />
+ 
+
+
+
+<script type="text/javascript">
+	 var grid;	
+	 function onresize(){
+		 resizeEasyGrid('grid');
+	 }
+	 $(document).ready(function(){
+		grid = $("#grid"); 
+	 });
+
+	 function search1(){
+		 var name = $("#name").val();
+		 grid.datagrid('load',{name:name});
+	 }
+	
+	</script>
+	
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>  
+	<body >
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="width: 100%">
+			<tr>
+				<td height="30">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="15" height="30" class="td_left_top_table"></td>
+							<td class="td_middle_table" valign="middle">
+								<div class="ico_win">搜索反馈</div>
+							</td>
+							<td class="td_middle_table">
+								<div class="title_oper"></div>
+							</td>
+							<td width="14" class="td_right_top_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="9" class="td_left_table_content">&nbsp;</td>
+							<td class="td_global">
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_content">
+									<tr>
+										<td height="26" colspan="3" class="table_content_title_td"></td>
+									</tr>
+									<tr>
+										<td class="table_content_td" width="150px">
+											名称：
+										</td>
+										<td class="table_content_td" align="left">
+											<input class="txt_input" name="no" id="no" maxlength="10" />
+										</td>
+										<td class="table_content_td" height="30">
+											<input type="button" class="btn_input" value="查询" onclick="search()" />
+											<input type="button" class="btn_input" value="重置" onclick="" />
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td width="9" class="td_right_table_content">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="29">
+						<tr>
+							<td width="15" class="td_left_buttom_table"></td>
+							<td class="td_middle_buttom_table">&nbsp;</td>
+							<td width="14" class="td_right_buttom_table"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<div style="height: 5px;"></div>
+
+		<div id="divContainer" style="width: 99.5%; margin-left: 4px;">
+			<table id="grid" class="easyui-datagrid" title="列表" align="center" 
+				data-options="
+					autoRowHeight:false,
+                    width: 'auto',         
+					height: 400,    
+                    toolbar: '#tb',
+					pagination:true,
+					pageSize:50,
+					loadMsg:'数据正在努力加载中...'
+					">
+                    <thead>
+                    <thead >
+                    	<th data-options="field:'xxx01',width:50,checkbox:true">id</th>
+                   		<th data-options="field:'xxx1',width:100">搜索引擎</th>
+                        <th data-options="field:'xxx2',width:120">关键字</th>
+                        <th data-options="field:'xxx31',width:120">时间</th>
+                        <th data-options="field:'xxx3',width:80">事件数量</th>
+                        <th data-options="field:'xxx4',width:180">快照</th>
+						<th data-options="field:'xxx5',width:180">操作</th>
+				</thead> 
+				<tbody>
+                    <tr>
+                    	<td></td>
+                        <td>百度</td>
+                        <td>xxx</td>
+                        <td>2014-05-04 10:10:10</td>
+                        <td>10</td>
+                        <td>xx</td>
+                        <td>查看 | 删除 | 忽略 | 确认 </td>
+                    </tr>
+            	</tbody>
+			</table>
+            <div id="tb" style="height: auto">
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onClick="delUnit()">删除</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onClick="delUnit()">导出</a>
+            </div>
+		</div>
+		</div>
+		<div style="height: 5px;"></div> 
+	</body>
+</html>
+
+ 

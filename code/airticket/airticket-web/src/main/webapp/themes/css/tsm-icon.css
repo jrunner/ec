@@ -1,0 +1,27 @@
+.icon-tip{
+	background:url('../images/tsm-icons/tip.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('../images/tsm-icons/mini_refresh.png') no-repeat center center;
+}
+
+
+.icon-folder{
+	background:url('../images/tsm-icons/folder.gif') no-repeat center center;
+}
+.icon-leaf{
+	background:url('../images/tsm-icons/leaf.gif') no-repeat center center;
+}
+
+.row-icon-view{
+	background:url(../../themes/images/ico/c1.gif) no-repeat;
+	width:16px;
+	height:16px;
+	padding-right:16px;
+}
+.row-icon-download{
+	background:url(../../themes/images/ico/c2.gif) no-repeat;
+	width:16px;
+	height:16px;
+	padding-right:16px;
+}

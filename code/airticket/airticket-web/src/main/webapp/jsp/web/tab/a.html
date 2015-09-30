@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+
+<body>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="30">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="15" height="30"><img src="images/tab_03.gif" width="15" height="30" /></td>
+        <td background="images/tab_05.gif">
+        	<img src="images/311.gif" width="16" height="16" />
+        	<span class="STYLE4">您正在做的业务是:人力资源管理--激励管理--激励登记</span>
+        </td>
+        <td width="14"><img src="images/tab_07.gif" width="14" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="9" background="images/tab_12.gif">&nbsp;</td>
+        <td bgcolor="e5f1d6">
+        <!-- 显示数据的表格开始<<< -->
+        <table style="width:100%; text-align:center; background-color:white;" cellpadding="0" cellspacing="0">
+          <tr height="26px">
+            <td class="STYLE3 cellStyle cellBorderTLB">档案编号</td>
+            <td colspan="7" style="text-align:left; padding-left:5px;" class="STYLE3 cellStyle cellBorderAll">
+            ${requestScope.humanFile.humanId }<html:hidden property="bonus.humanId" value="${requestScope.humanFile.humanId }"/>
+            </td>
+          </tr>
+          <tr height="26px">
+            <td width="10%" class="STYLE3 cellStyle cellBorderLB">姓名</td>
+            <td width="15%" class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">&nbsp;</td>
+            <td width="10%" class="STYLE3 cellStyle cellBorderLB">职位分类</td>
+            <td width="15%" class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">&nbsp;</td>
+            <td width="10%" class="STYLE3 cellStyle cellBorderLB">职位名称</td>
+            <td width="15%" class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">&nbsp;</td>
+            <td width="10%" class="STYLE3 cellStyle cellBorderLB">激励项目</td>
+            <td width="15%" class="STYLE3 cellStyle cellBorderLBR" style="text-align:left; padding-left:5px;">&nbsp;</td>
+          </tr>
+          <tr height="26px">
+    		<td class="STYLE3 cellStyle cellBorderLB">激励价值</td>
+    		<td class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">
+    		<html:text property="bonus.bonusWorth" style="width:80px;" maxlength="8"></html:text>
+    		</td>
+    		<td class="STYLE3 cellStyle cellBorderLB">激励等级</td>
+    		<td class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">&nbsp;</td>
+    		<td class="STYLE3 cellStyle cellBorderLB">登记人</td>
+    		<td class="STYLE3 cellStyle cellBorderLB" style="text-align:left; padding-left:5px;">&nbsp;</td>
+    		<td class="STYLE3 cellStyle cellBorderLB">登记时间</td>
+    		<td class="STYLE3 cellStyle cellBorderLBR" style="text-align:left; padding-left:5px;">&nbsp;</td>
+  		  </tr>
+  		  <tr>
+    		<td class="STYLE3 cellStyle cellBorderLB">备注</td>
+    		<td colspan="7" class="STYLE3 cellStyle cellBorderLBR" style="text-align:left; padding-left:5px;">
+    			<html:textarea property="bonus.remark" rows="5" cols="80"></html:textarea>
+    		</td>
+    	  </tr>
+        </table>
+        <!-- 显示数据表格结束 -->
+        </td>
+        <td width="9px" background="images/tab_16.gif">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="29"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="15" height="29"><img src="images/tab_20.gif" width="15" height="29" /></td>
+        <td background="images/tab_21.gif" align="right">
+        	<input type="submit" value="提交">
+			<input type="button" value="返回" onclick="window.history.back();">
+        </td>
+        <td width="14"><img src="images/tab_22.gif" width="14" height="29" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</html:form>
+<script type="text/javascript">
+	function validate(){
+		var objText=document.forms[0].elements("bonus.bonusWorth");
+		if(objText.value==""){
+			alert("请输入激励价值！");
+			objText.focus();
+			return false;
+		}
+		if(objText.value.indexOf("-")>=0||objText.value.indexOf("+")>=0||isNaN(objText.value)){
+			alert("激励价值必须是整数或小数！");
+			objText.select();
+			return false;
+		}
+		return true;
+	}
+</script>
+</body></body>

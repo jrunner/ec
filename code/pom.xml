@@ -10,6 +10,8 @@
     <name>${project.artifactId}</name>
 
     <modules>
+        <module>ec</module>
+        <module>airticket</module>
         <module>smart</module>
     </modules>
 

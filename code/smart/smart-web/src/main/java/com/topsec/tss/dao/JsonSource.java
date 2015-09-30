@@ -10,7 +10,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.t2t.ec.utils.file.FileUtil;
+import com.t2t.examples.file.FileUtil;
 
 public class JsonSource {
 	public static void main(String[] args) throws FileNotFoundException, IOException {

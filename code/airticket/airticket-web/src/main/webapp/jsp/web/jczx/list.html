@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" type="text/css" href="../../../js/jquery-easyui-1.3.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../js/jquery-easyui-1.3.5/themes/icon.css">
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+
+<script type="text/javascript" src="../../../js/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../js/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js" ></script>
+
+<script>
+        	
+
+</script>
+</head>
+<body  class="easyui-layout" data-options="fit:true,border:false">
+	
+		<table id="dg" title="" style="height:500px" align="center" border="0" data-options=" 
+					rownumbers:true,
+					singleSelect:true,
+					autoRowHeight:false,
+					toolbar: '#tb',
+					pagination:true,
+					pageSize:100">
+			<thead>
+				<tr>
+					<th field="inv" width="80">Inv No</th>
+					<th field="date" width="80">Date</th>
+					<th field="name" width="80">Name</th>
+					<th field="amount" width="80" align="right">Amount</th>
+					<th field="price" width="80" align="right">Price</th>
+					<th field="cost" width="80" align="right" editor="text">Cost</th>
+					<th field="note" width="80" formatter="formatAction">Note</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="tb" style="height:auto">
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append()">Append</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="insert()">Insert</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="modify()">Modify</a>
+		</div>
+	
+
+	<script> 
+		function formatAction(value,row,index){
+			if (row.editing){
+				var s = '<a href="#" onclick="saverow(this)">Save</a> ';
+				var c = '<a href="#" onclick="cancelrow(this)">Cancel</a>';
+				return s+c;
+			} else {
+				var e = '<a href="#" onclick="editrow(this)">Edit</a> ';
+				var d = '<a href="#" onclick="deleterow(this)">Delete</a>';
+				return e+d;
+			}
+		}
+
+		$.extend($.fn.datagrid.defaults.editors, {
+			numberspinner: {
+				init: function(container, options){
+					var input = $('<input type="text">').appendTo(container);
+					return input.numberspinner(options);
+				},
+				destroy: function(target){
+					$(target).numberspinner('destroy');
+				},
+				getValue: function(target){
+					return $(target).numberspinner('getValue');
+				},
+				setValue: function(target, value){
+					$(target).numberspinner('setValue',value);
+				},
+				resize: function(target, width){
+					$(target).numberspinner('resize',width);
+				}
+			}
+		});
+		$(function(){
+			$('#dg').datagrid({
+				onBeforeEdit:function(index,row){
+					row.editing = true;
+					updateActions(index);
+				},
+				onAfterEdit:function(index,row){
+					row.editing = false;
+					updateActions(index);
+				},
+				onCancelEdit:function(index,row){
+					row.editing = false;
+					updateActions(index);
+				}
+			});
+		});
+		function updateActions(index){
+			$('#dg').datagrid('updateRow',{
+				index:index,
+				row:{}
+			});
+		}
+		function getRowIndex(target){
+			var tr = $(target).closest('tr.datagrid-row');
+			return parseInt(tr.attr('datagrid-row-index'));
+		}
+		function editrow(target){
+			$('#dg').datagrid('beginEdit', getRowIndex(target));
+		}
+		function deleterow(target){
+			$.messager.confirm('Confirm','Are you sure?',function(r){
+				if (r){
+					$('#dg').datagrid('deleteRow', getRowIndex(target));
+				}
+			});
+		}
+		function saverow(target){
+			$('#dg').datagrid('endEdit', getRowIndex(target));
+		}
+		function cancelrow(target){
+			$('#dg').datagrid('cancelEdit', getRowIndex(target));
+		}
+	
+		$(window).resize(function(){
+		 	$('#dg').datagrid('resize');
+		});
+		 
+		function getData(){
+			var rows = [];
+			for(var i=1; i<=2; i++){
+				var amount = Math.floor(Math.random()*1000);
+				var price = Math.floor(Math.random()*1000);
+				rows.push({
+					inv: 'Inv No '+i,
+					date: $.fn.datebox.defaults.formatter(new Date()),
+					name: 'Name '+i,
+					amount: amount,
+					price: price,
+					cost: amount*price,
+					note: 'Note '+i
+				});
+			}
+			return rows;
+		}
+		
+		function pagerFilter(data){
+			if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
+				data = {
+					total: data.length,
+					rows: data
+				}
+			}
+			var dg = $(this);
+			var opts = dg.datagrid('options');
+			var pager = dg.datagrid('getPager');
+			pager.pagination({
+				onSelectPage:function(pageNum, pageSize){
+					opts.pageNumber = pageNum;
+					opts.pageSize = pageSize;
+					pager.pagination('refresh',{
+						pageNumber:pageNum,
+						pageSize:pageSize
+					});
+					dg.datagrid('loadData',data);
+				}
+			});
+			if (!data.originalRows){
+				data.originalRows = (data.rows);
+			}
+			var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
+			var end = start + parseInt(opts.pageSize);
+			data.rows = (data.originalRows.slice(start, end));
+			return data;
+		}
+		$(function(){
+			$('#dg').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
+		});
+		
+		//追加
+		function append(){
+			var i = Math.floor(Math.random()*1000);
+			var amount = Math.floor(Math.random()*1000);
+			var price = Math.floor(Math.random()*1000);
+			var row = {
+				inv: 'Inv No '+i,
+				date: $.fn.datebox.defaults.formatter(new Date()),
+				name: 'Name '+i,
+				amount: amount,
+				price: price,
+				cost: amount*price,
+				note: 'Note '+i
+			}
+			
+			$('#dg').datagrid('appendRow',row);
+		}
+		//添加到首条
+		function insert(){
+			var i = Math.floor(Math.random()*1000);
+			var amount = Math.floor(Math.random()*1000);
+			var price = Math.floor(Math.random()*1000);
+			var row = {
+				inv: 'Inv No '+i,
+				date: $.fn.datebox.defaults.formatter(new Date()),
+				name: 'Name '+i,
+				amount: amount,
+				price: price,
+				cost: amount*price,
+				note: 'Note '+i
+			}
+			
+			$('#dg').datagrid('insertRow',{
+				index: 0,	// 索引从0开始
+				row: row
+			});
+		}
+		//更新
+		function modify(){
+			var amount = Math.floor(Math.random()*1000);
+			var price = Math.floor(Math.random()*1000);
+			var row = {
+				amount: amount,
+				price: price,
+				date: $.fn.datebox.defaults.formatter(new Date()),
+				cost: amount*price
+			}
+			
+			$('#dg').datagrid('updateRow',{
+				index: 0,
+				row: row
+			});
+		}
+		
+	
+	$.fn.datebox.defaults.formatter = function(date){
+        var y = date.getFullYear();
+        var m = date.getMonth()+1;
+        var d = date.getDate();
+        return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+    };
+    
+	</script>
+</body>
+</html>

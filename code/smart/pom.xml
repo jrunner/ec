@@ -17,7 +17,6 @@
     </parent>
 
     <modules>
-        <module>ec-utils</module>
         <module>smart-helper</module>
         <module>smart-model</module>
         <module>smart-dubbo</module>
