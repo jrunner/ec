@@ -15,7 +15,7 @@ dom4j、jdom
 3.JDOM
 JDOM的处理方式有些类似于DOM，但它主要是用SAX实现的 。JDOM用Java的数据类型来定义操作数据树的各个节点 。JDOM的性能也很优越。
 
-4.JAXB (Java And XML Binding)
+4.JAXB (Java And XML Bi nding)
 JAXB 是以SUN为主的一些公司公布的。JAXB将schema（或者DTD）映射为java对象（.java文件），然后使用这些java对象来解析xml文件。需要使用之前生成java文件，因而要有固定的schema，无法处理动态的xml文件。
 首先使用xjc命令，生成java文件 xjc  [-options ...]
 (生成的文件较多)
