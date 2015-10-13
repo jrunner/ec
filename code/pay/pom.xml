@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.t2t.ec</groupId>
-    <artifactId>smart-parent</artifactId>
+    <artifactId>pay-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
@@ -17,10 +17,6 @@
     </parent>
 
     <modules>
-        <module>smart-helper</module>
-        <module>smart-model</module>
-        <module>smart-dubbo</module>
-        <module>smart-web</module>
     </modules>
 
     <properties>
