@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ilucky.mybatis2.mapper.UserSayMapper">
+    
+    <resultMap type="UserSay" id="userSayMap">
+		<id property="id" column="id"></id>
+		<id property="user" column="user"></id>
+		<id property="say" column="say"></id>
+		<id property="createTime" column="create_time" javaType="java.util.Date"></id>
+	</resultMap> 
+	
+    <insert id="createUserSayList" >
+   		insert into mybatis_user_say(id, user, say, create_time) values
+        <foreach collection="list" item="item" index="index" separator=",">
+           (#{item.id}, #{item.user}, #{item.say}, #{item.createTime})
+        </foreach>
+    </insert> 
+    
+      <select id="getUserSayListByUser1" resultMap="userSayMap" parameterType="java.lang.String">
+    	select * from mybatis_user_say  where 1=1
+	    <if test="user!=null"> and user=#{user} </if>
+	</select> 
+	
+      <select id="getUserSayListByUser2" resultMap="userSayMap">
+    	select * from mybatis_user_say  where 1=1
+	    <if test="user!=null"> and user=#{user} </if>
+	</select>
+	
+       <select id="getUserSayListByUser3" resultMap="userSayMap">
+    	select * from mybatis_user_say  where 1=1
+	    <if test="user!=null">and user=#{user} </if>
+	</select>
+</mapper>

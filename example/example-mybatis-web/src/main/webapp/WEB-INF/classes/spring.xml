@@ -1,0 +1,61 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"> 
+    
+	<!-- 配置数据库参数 -->
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close"> 
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8" />
+		<property name="username" value="root" />
+		<property name="password" value="mysql" />
+    </bean>  
+  
+  	<!-- 配置mybaits注入 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="configLocation" value="classpath:mybatis.xml"></property>  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>
+    
+    <!-- 配置mapper扫描-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.ilucky.mybatis2.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 配置service扫描 -->
+	<context:component-scan base-package="com.ilucky.mybatis2.service" />  
+	
+	<!-- 配置事务管理器 -->  
+    <bean id="transactionManager"  
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
+  
+    <!-- 通过aop配置让所有service包下所有bean的方法拥有事务 -->  
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">  
+        <tx:attributes>  
+            <tx:method name="*"></tx:method>  
+        </tx:attributes>  
+    </tx:advice>  
+      
+    <!--  pointcut中expression的意思是:  
+	 第一个*表示方法的返回值可以是任意的.   
+     第一个..表示service包下任意的class.  
+ 	 第二个*表示service包下任意class中的任意方法.  
+  	 第一个..表示service包下任意class中的任意方法中的参数可以是任意的.  
+    (注意第一个星号后面必须要有一个空格,否则会报错误)-->  
+    <aop:config proxy-target-class="true">  
+        <aop:pointcut id="serviceMethod"  
+            expression="execution(* com.ilucky.mybatis2.service..*(..))"></aop:pointcut>  
+        <aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice"></aop:advisor>  
+    </aop:config>
+</beans>

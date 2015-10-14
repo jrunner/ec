@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ilucky.mybatis2.mapper.UserMapper">
+    
+    <resultMap type="User" id="userMap">
+		<id property="id" column="id"></id>
+		<id property="name" column="name"></id>
+		<id property="password" column="password"></id>
+		<id property="sex" column="sex"></id>
+		<id property="birthday" column="birthday" javaType="java.util.Date"></id>
+		<id property="createTime" column="create_time" javaType="java.util.Date"></id>
+		<id property="userType" column="user_type"  javaType="com.ilucky.mybatis2.model.UserType"></id>
+	</resultMap> 
+	
+   	<insert id="createUser">
+    	insert into mybatis_user(id, name, password, sex, birthday, create_time, user_type)
+    	values(#{id}, #{name}, #{password}, #{sex}, #{birthday}, #{createTime}, #{userType})
+    </insert>  
+    
+   	<insert id="createUserList" >
+   		insert into mybatis_user(id, name, password, sex, birthday, create_time, user_type) values
+        <foreach collection="list" item="item" index="index" separator=",">
+           (#{item.id}, #{item.name}, #{item.password}, #{item.sex}, #{item.birthday}, #{item.createTime}, #{item.userType})
+        </foreach>
+    </insert> 
+    
+    <update id="modifyUser">
+    	update mybatis_user set 
+    	<if test="name!=null">name=#{name},</if>
+	    <if test="password!=null">password=#{password},</if>
+	    <if test="sex!=null">sex=#{sex},</if>
+	    <if test="birthday!=null">birthday=#{birthday},</if>
+	    <if test="createTime!=null">create_time=#{createTime},</if>
+	    <if test="userType!=null">user_type=#{userType},</if>
+	    id=#{id} where 
+	    <if test="id!=null">id=#{id}</if> 
+    </update> 
+
+     <delete id="deleteUser">
+    	delete from mybatis_user where id=#{user}
+    </delete> 
+    
+     <delete id="deleteUserList">
+    	delete from mybatis_user where id in
+		<foreach collection="list" item="item" index="index" open="(" separator="," close=")">   
+			#{item} 
+		</foreach> 
+    </delete> 
+    
+     <select id="getUser"  resultMap="userMap">
+    	select * from mybatis_user where id=#{user}
+	</select> 
+	
+     <select id="getUserByName1"  resultMap="userMap">
+    	select * from mybatis_user where name=#{name}
+	</select> 
+	
+      <select id="getUserByName2"  resultMap="userMap">
+    	select * from mybatis_user where name=#{name}
+	</select> 
+	
+   <!--   <select id="getUserList" resultMap="userMap">
+    	select * from mybatis_user 
+	</select>  -->
+	
+	  <select id="getUserList" resultMap="userMap">
+    	select * from mybatis_user  where 1=1
+	    <if test="smallBirthday!=null">and birthday &gt;#{smallBirthday} </if>
+	    <if test="bigBirthday!=null">and birthday &lt;#{bigBirthday} </if>
+	    <if test="userType!=null">and user_type=#{userType} </if>
+    	<if test="first!=null"> limit ${first},${count}</if>
+	</select> 
+	
+      <select id="getUserCount" resultType="int">
+		select count(*) from mybatis_user
+	</select>
+</mapper>
