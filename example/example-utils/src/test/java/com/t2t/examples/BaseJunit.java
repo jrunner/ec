@@ -1,5 +1,6 @@
-package com.t2t.examples.xml.jaxb;
+package com.t2t.examples;
 
+import com.t2t.examples.xml.jaxb.XmlUtilTest;
 import org.junit.After;
 import org.junit.Before;
 import org.slf4j.Logger;
