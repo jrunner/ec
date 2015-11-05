@@ -20,6 +20,7 @@
         <module>smart-helper</module>
         <module>smart-model</module>
         <module>smart-dubbo</module>
+        <module>smart-core</module>
         <module>smart-web</module>
     </modules>
 
