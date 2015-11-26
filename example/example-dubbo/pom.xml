@@ -10,8 +10,8 @@
 
     <properties>
         <maven.build.sourceEncoding>UTF-8</maven.build.sourceEncoding>
-        <maven.compile.source>1.7</maven.compile.source>
-        <maven.compile.target>1.7</maven.compile.target>
+        <maven.compile.source>1.6</maven.compile.source>
+        <maven.compile.target>1.6</maven.compile.target>
         <maven-svn-revision-number-plugin.version>1.13</maven-svn-revision-number-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -67,6 +67,14 @@
             <version>0.1</version>
         </dependency>
         <!-- zkclient # -->
+
+        <!-- gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <!-- gson # -->
     </dependencies>
 
     <build>

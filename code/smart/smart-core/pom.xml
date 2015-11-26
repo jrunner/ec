@@ -3,18 +3,28 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>smart-core</artifactId>
+<<<<<<< HEAD
     <version>0.0.1-SNAPSHOT</version>
+=======
+>>>>>>> 4067795bb3a77358b1b586145a515030c191da41
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
 
     <parent>
+<<<<<<< HEAD
         <groupId>com.t2t.top</groupId>
         <artifactId>smart-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+=======
+        <groupId>com.t2t.ec</groupId>
+        <artifactId>smart-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+>>>>>>> 4067795bb3a77358b1b586145a515030c191da41
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
+<<<<<<< HEAD
         <!--t2t -->
         <dependency>
             <groupId>com.t2t.top</groupId>
@@ -22,6 +32,15 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!--t2t #-->
+=======
+        <!--ec -->
+        <dependency>
+            <groupId>com.t2t.ec</groupId>
+            <artifactId>ec-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--ec #-->
+>>>>>>> 4067795bb3a77358b1b586145a515030c191da41
     </dependencies>
     
 </project>

@@ -21,9 +21,15 @@
     <dependencies>
         <!--ec -->
         <dependency>
+<<<<<<< HEAD
             <groupId>com.t2t.top</groupId>
             <artifactId>base-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+=======
+            <groupId>com.t2t.ec</groupId>
+            <artifactId>ec-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+>>>>>>> 4067795bb3a77358b1b586145a515030c191da41
         </dependency>
         <!--ec #-->
 

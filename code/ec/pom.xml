@@ -66,6 +66,7 @@
 
 	<modules>
         <module>ec-utils</module>
+        <module>ec-core</module>
     </modules>
 
 </project>
