@@ -3,15 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.t2t.ec</groupId>
+    <groupId>com.t2t.top</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
 
     <modules>
-        <module>ec</module>
+        <module>base</module>
+        <module>devops</module>
         <module>airticket</module>
+        <module>auth</module>
+        <module>pay</module>
         <module>smart</module>
     </modules>
 
@@ -35,259 +38,101 @@
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-site-plugin.version>3.3</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
-
         <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
 
         <junit.version>4.11</junit.version>
-
-        <site.stagingDirectory>/opt/sites</site.stagingDirectory>
-        <site.path>/</site.path>
-
     </properties>
 
     <build>
-    <plugins>
-        <plugin>
-            <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
-            <artifactId>svn-revision-number-maven-plugin</artifactId>
-            <version>${maven-svn-revision-number-plugin.version}</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>revision</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <entries>
-                    <entry>
-                        <prefix>svn</prefix>
-                    </entry>
-                </entries>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>${maven-compiler-plugin.version}</version>
-            <configuration>
-                <source>${maven.compile.source}</source>
-                <target>${maven.compile.target}</target>
-                <encoding>${project.build.sourceEncoding}</encoding>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-eclipse-plugin</artifactId>
-            <version>${maven-eclipse-plugin.version}</version>
-            <configuration>
-                <downloadSources>true</downloadSources>
-                <downloadJavadocs>true</downloadJavadocs>
-                <useProjectReferences>true</useProjectReferences>
-                <wtpversion>2.0</wtpversion>
-                <additionalConfig>
-                    <file>
-                        <!-- Text file encoding : UTF-8 -->
-                        <name>.settings/org.eclipse.core.resources.prefs</name>
-                        <content>
-                            <![CDATA[eclipse.preferences.version=1${line.separator}encoding/<project>=${project.build.sourceEncoding}${line.separator}]]>
-                        </content>
-                    </file>
-                    <file>
-                        <!-- New text file line delimiter : Unix -->
-                        <name>.settings/org.eclipse.core.runtime.prefs</name>
-                        <content>
-                            <![CDATA[eclipse.preferences.version=1${line.separator}line.separator=\n${line.separator}]]>
-                        </content>
-                    </file>
-                </additionalConfig>
-                <classpathContainers>
-                    <classpathContainer>
-                        org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-${maven.compile.target}
-                    </classpathContainer>
-                </classpathContainers>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>${maven-jar-plugin.version}</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                    </manifest>
-                    <manifestEntries>
-                        <Build-Time>${maven.build.timestamp}</Build-Time>
-                        <SCM-Revision>${svn.revision}</SCM-Revision>
-                        <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
-                        <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
-                    </manifestEntries>
-                </archive>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>${maven-war-plugin.version}</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                    </manifest>
-                    <manifestEntries>
-                        <Build-Time>${maven.build.timestamp}</Build-Time>
-                        <SCM-Revision>${svn.revision}</SCM-Revision>
-                        <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
-                        <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
-                    </manifestEntries>
-                </archive>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-ear-plugin</artifactId>
-            <version>${maven-ear-plugin.version}</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                    </manifest>
-                    <manifestEntries>
-                        <Build-Time>${maven.build.timestamp}</Build-Time>
-                        <SCM-Revision>${svn.revision}</SCM-Revision>
-                        <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
-                        <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
-                    </manifestEntries>
-                </archive>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>${maven-source-plugin.version}</version>
-            <executions>
-                <execution>
-                    <id>attach-sources</id>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven-surefire-plugin.version}</version>
-            <configuration>
-                <forkCount>3</forkCount>
-                <reuseForks>true</reuseForks>
-                <testFailureIgnore>true</testFailureIgnore>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${maven-javadoc-plugin.version}</version>
-            <configuration>
-                <locale>zh_CN</locale>
-                <failOnError>false</failOnError>
-                <quiet>true</quiet>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>attach-javadocs</id>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <version>${maven-site-plugin.version}</version>
-            <configuration>
-                <stagingDirectory>${site.stagingDirectory}</stagingDirectory>
-                <locales>zh_CN</locales>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
-    <reporting>
         <plugins>
-
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <findbugsXmlOutput>false</findbugsXmlOutput>
+                    <source>${maven.compile.source}</source>
+                    <target>${maven.compile.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven-checkstyle-plugin.version}</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
                 <configuration>
-                    <configLocation>${topsec.checkstyle.config}</configLocation>
-                    <failsOnError>false</failsOnError>
-                    <enableRulesSummary>true</enableRulesSummary>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
+                            <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>checkstyle</report>
-                            <report>checkstyle-aggregate</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>${maven-surefire-report-plugin.version}</version>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
                 <configuration>
-                    <aggregate>true</aggregate>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
+                            <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>report-only</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${maven-project-info-reports-plugin.version}</version>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${maven-ear-plugin.version}</version>
                 <configuration>
-                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
+                            <X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>index</report>
-                            <report>dependencies</report>
-                            <report>distribution-management</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <forkCount>3</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -296,20 +141,42 @@
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <locale>zh_CN</locale>
-                    <show>public</show>
                     <failOnError>false</failOnError>
                     <quiet>true</quiet>
                 </configuration>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>javadoc</report>
-                            <report>test-javadoc</report>
-                            <report>aggregate</report>
-                            <report>test-aggregate</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+                <configuration>
+                    <stagingDirectory>${site.stagingDirectory}</stagingDirectory>
+                    <locales>zh_CN</locales>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </reporting>

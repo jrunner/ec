@@ -3,13 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>airticket-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>${project.artifactId}</name>
 
     <parent>
-        <groupId>com.t2t.ec</groupId>
+        <groupId>com.t2t.top</groupId>
         <artifactId>airticket-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -18,6 +19,13 @@
     </properties>
 
     <dependencies>
+        <!--ec -->
+        <dependency>
+            <groupId>com.t2t.top</groupId>
+            <artifactId>base-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--ec #-->
 
         <!-- dubbo -->
         <dependency>

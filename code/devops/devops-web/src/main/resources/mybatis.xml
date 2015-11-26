@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置缓存设置 -->
+	<settings>
+		<setting name="cacheEnabled" value="false"/>
+	</settings>
+
+    <!--配置model别名-->
+    <typeAliases>
+        <typeAlias type="com.t2t.top.devops.model.po.Account" alias="account" />
+        <typeAlias type="com.t2t.top.devops.model.po.Issue" alias="issue" />
+        <typeAlias type="com.t2t.top.devops.model.po.Menu" alias="menu" />
+        <typeAlias type="com.t2t.top.devops.model.po.PubHistory" alias="pubHistory" />
+    </typeAliases>
+
+    <!--加载mapper文件 -->
+    <mappers>
+         <mapper resource="com/t2t/top/devops/mapper/AccountMapper.xml" />
+         <mapper resource="com/t2t/top/devops/mapper/IssueMapper.xml" />
+         <mapper resource="com/t2t/top/devops/mapper/MenuMapper.xml" />
+         <mapper resource="com/t2t/top/devops/mapper/PubHistoryMapper.xml" />
+    </mappers>
+
+</configuration>

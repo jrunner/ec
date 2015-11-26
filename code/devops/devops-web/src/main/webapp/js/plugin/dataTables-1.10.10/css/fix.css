@@ -1,0 +1,25 @@
+.toggle-vis {
+    cursor: pointer;
+}
+
+/*修复每页显示 _MENU_ 条记录 的bug */
+.dataTables_length{
+    width:auto;
+    display:inline-block;
+    vertical-align:middle;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.cellStyle{
+    text-align: right;
+}
+
+/*加载条*/
+.dataTables_wrapper .dataTables_processing {
+    left: 40%;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}

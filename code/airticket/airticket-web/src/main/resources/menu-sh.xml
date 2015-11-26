@@ -91,7 +91,7 @@
 	
 	<entry name="007" src="images/007.png" uri="/demo-0.3.0/menu.do?cmd=center" alias="系统维护" _code="/sys"/>
 	<entry name="007001" alias="权限管理" icon="icon-folder" _code="/sys/auth"/>
-	<entry name="007001001" alias="用户" icon="icon-leaf"  _code="/sys/auth/user" uri="/demo-0.3.0/jsp/web/sys/auth/list_user.html"></entry>
+	<entry name="007001001" alias="用户" icon="icon-leaf"  _code="/sys/auth/userId" uri="/demo-0.3.0/jsp/web/sys/auth/list_user.html"></entry>
 	<entry name="007001002" alias="角色" icon="icon-leaf"  _code="/sys/auth/role" uri="/demo-0.3.0/jsp/web/sys/auth/list_role.html"></entry>
 	<entry name="007002" alias="审计管理" icon="icon-folder" _code="/sys/audit"/>
 	<entry name="007002001" alias="审计管理" icon="icon-leaf"  _code="/sys/audit/xxx" uri="/demo-0.3.0/jsp/web/sys/audit/list.html"></entry>

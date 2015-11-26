@@ -24,7 +24,7 @@
 			<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">
 				<driverClass>${jdbc.driverClassName}</driverClass>
 				<jdbcUrl>${jdbc.url}</jdbcUrl>
-				<user>${jdbc.username}</user>
+				<userId>${jdbc.username}</userId>
 				<password>${jdbc.password}</password>
 				<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
 				<initialPoolSize>1</initialPoolSize>

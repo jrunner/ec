@@ -1,0 +1,19 @@
+package com.t2t.top.devops.constant;
+
+import com.t2t.top.base.constant.Option;
+
+/**
+ * Created by yangpengfei
+ * <p/>
+ * 错误状态码前三位代表分类， 后两位自定义
+ * 441xx 内部请求参数
+ * 442xx 外部系统业务异常
+ * 451xx 内部系统异常
+ * 452xx 外部系统异常
+ * 460xx 未知异常,扩展异常
+ */
+public class ErrorCodeConstants {
+
+    public final static Option NOT_LOGIN_ERROR = new Option(40006, "用户未登录");
+}
+

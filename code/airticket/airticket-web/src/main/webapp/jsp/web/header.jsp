@@ -34,11 +34,11 @@
 		<!--head-over-->
 		<!--admin-begin-->
 		<div id="admin">
-			<div id="user">
+			<div id="userId">
 				<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 					<tr>
 						<td width="11%">
-							<img src="<%=request.getContextPath() %>/jsp/web/images/user.png" width="16" height="16" />
+							<img src="<%=request.getContextPath() %>/jsp/web/images/userId.png" width="16" height="16" />
 						</td>
 						<td width="72%">
 							[admin]&nbsp;欢迎登录
